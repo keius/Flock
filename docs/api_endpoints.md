@@ -18,6 +18,10 @@
 - `POST /api/session`
 - `DELETE /api/session`
 
+### Groups
+- `GET /api/group`
+- `GET /api/group/:groupId`
+
 ### Events
 
 - `GET /api/group/:groupId/event`
@@ -25,10 +29,3 @@
 - `GET /api/group/:groupId/event/:eventId`
 - `PATCH /api/group/:groupId/events/:eventId`
 - `DELETE /api/group/:groupId/events/:eventId`
-
-### Groups
-
-- `GET /api/group`
-- `GET /api/group/:groupId`
-- `DELETE /api/group/:groupId`
-- `GET /api/group/:groupId/`
