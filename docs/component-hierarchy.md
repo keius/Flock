@@ -40,6 +40,6 @@
 | "/profile-group" | "ProfileGroupContainer" |
 | "/profile-event" | "ProfileEventContainer" |
 | "/home/group/:groupId" | "GroupContainer" |
-| "/home/group/:groupId/event/:eventId" | "EventContainer" |
+| "/home/event/:eventId" | "EventContainer" |
 | "/new-event" | "NewEventContainer" |
 | "/group-search" | "GroupSearch" |

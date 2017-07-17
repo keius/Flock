@@ -19,7 +19,6 @@ owner_id    | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | string    |
 location    | string    |
-category    | string    |
 image_url   | string    |
 
 ## events

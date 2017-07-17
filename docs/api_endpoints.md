@@ -11,7 +11,7 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users`
+- `PATCH /api/users/:userId`
 
 ### Session
 
@@ -27,8 +27,8 @@
 
 ### Events
 
-- `GET /api/group/:groupId/event`
-- `POST /api/group/:groupId/events`
-- `GET /api/group/:groupId/event/:eventId`
-- `PATCH /api/group/:groupId/events/:eventId`
-- `DELETE /api/group/:groupId/events/:eventId`
+- `GET /api/event`
+- `POST /api/event`
+- `GET /api/events/:eventId`
+- `PATCH /api/events/:eventId`
+- `DELETE /api/events/:eventId`
