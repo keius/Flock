@@ -31,7 +31,7 @@ Flock is a social website focused on bringing people together for face-to-face e
 
 **Objective:** Events and groups should be search-able based on location and description.
 
-### Phase 5: Calendar(2 day)
+### Phase 5: Calendar(2 days)
 
 **Objective:** Add a Calendar to Groups.
 
