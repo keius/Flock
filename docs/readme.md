@@ -24,5 +24,5 @@
 ### Bonus Features (TBD)
 
   - [ ] Integrated Google Maps
-  - [ ] Categories
+  - [ ] Categories and QuickLinks
   - [ ] Calendar (for all groups in search results)
