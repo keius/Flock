@@ -1,3 +1,5 @@
+Trello: https://trello.com/b/yoOzYTpy
+
 ## Minimum Viable Product
 
 Flock is a social website focused on bringing people together for face-to-face events, based on the site MeetUp. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
