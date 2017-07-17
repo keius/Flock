@@ -7,8 +7,10 @@
   - HomeNav
   - HomeBanner
 
-**ProfileContainer**
+**ProfileGroupContainer**
   - ProfileGroup
+
+**ProfileEventContainer**
   - ProfileEvent
 
 **GroupContainer**
@@ -35,7 +37,8 @@
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/profile" | "ProfileContainer" |
+| "/profile-group" | "ProfileGroupContainer" |
+| "/profile-event" | "ProfileEventContainer" |
 | "/home/group/:groupId" | "GroupContainer" |
 | "/home/group/:groupId/event/:eventId" | "EventContainer" |
 | "/new-event" | "NewEventContainer" |
