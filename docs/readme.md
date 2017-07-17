@@ -4,12 +4,12 @@ Flock is a social website focused on bringing people together for face-to-face e
 
  - [ ] Hosting on Heroku or another public domain
  - [ ] New account creation, login, and guest/demo login
- - [ ] Events and RSVPs
- - [ ] Groups and joining groups
- - [ ] Calendar (on group page)
+ - [ ] Events: Joining(RSVP), creating, deleting
+ - [ ] Groups: Joining, creating, and deleting
+ - [ ] Profile: User's groups and events
+ - [ ] Calendar of events (on group page and profile page)
  - [ ] Search by location and group info (name, description)
  - [ ] Bonus: Categories and QuickLinks
- - [ ] Bonus: Calendar (for all groups in search results)
  - [ ] Bonus: Integrated Google Maps
  - [ ] Production README sample
 
@@ -40,4 +40,3 @@ Flock is a social website focused on bringing people together for face-to-face e
 
   - [ ] Integrated Google Maps
   - [ ] Categories and QuickLinks
-  - [ ] Calendar (for all groups in search results)
