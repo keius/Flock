@@ -20,7 +20,10 @@
 
 ### Groups
 - `GET /api/group`
+- `POST /api/group`
 - `GET /api/group/:groupId`
+- `PATCH /api/group/:groupId`
+- `DELETE /api/group/:groupId`
 
 ### Events
 
