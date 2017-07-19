@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  validates :username, :email, :password_digest,
-            :session_token, :full_name, :image_url, presence: true
+  validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, uniqueness: true
 
@@ -24,10 +23,10 @@ class User < ApplicationRecord
   end
 
   def reset_session_token
-    self.password_digest = SecureRandom.urlsafe_base64
+    self.session_token = SecureRandom.urlsafe_base64
     ensure_session_token_uniqueness
     self.save
-    self.password_digest
+    self.session_token
   end
 
   private
