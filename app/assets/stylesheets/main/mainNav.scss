@@ -9,6 +9,7 @@
 
   .searchNav {
     display: flex;
+    width: 33%;
     margin-left: 10px;
     align-items: center;
     justify-content: flex-start;
@@ -16,19 +17,19 @@
 
   .homeNav {
     display: flex;
+    width: 33%;
+    justify-content: center;
     align-items: center;
     text-decoration: none;
     .logo {
       width: 100px;
       height: auto;
     }
-    .logo-text {
-      font-size: 40px;
-    }
   }
 
   .authNav {
     display: flex;
+    width: 33%;
     margin-right: 10px;
     align-items: center;
     justify-content: flex-end;

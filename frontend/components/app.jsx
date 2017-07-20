@@ -1,8 +1,8 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import MainNavContainer from './main/main_nav_container';
-import Banner from './main/banner';
+import MainBody from './main/main_body';
 import SessionFormContainer from './session/session_form_container';
 
 const App = () => (
@@ -11,8 +11,11 @@ const App = () => (
       <MainNavContainer/>
     </header>
     <div>
-      <AuthRoute path='/login' component={SessionFormContainer}/>
-      <AuthRoute path='/signup' component={SessionFormContainer}/>
+      <Switch>
+        <AuthRoute exact path='/login' component={SessionFormContainer}/>
+        <AuthRoute exact path='/signup' component={SessionFormContainer}/>
+        <AuthRoute exact path='/' component={MainBody}/>
+      </Switch>
     </div>
   </div>
 );

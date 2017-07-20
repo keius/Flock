@@ -1,0 +1,23 @@
+@import 'variables';
+
+.mainBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  .mainText {
+    display: flex;
+    text-align: center;
+  }
+  .button {
+    padding: 20px;
+    text-decoration: none;
+    background-color: $flock-blue;
+    transition: filter 0.2s ease;
+    &:hover{
+      background-color: $flock-indigo;
+    }
+    color: white;
+  }
+}
