@@ -9,6 +9,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render 'api/users/show'
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)

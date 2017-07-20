@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -85,10 +85,8 @@ class SessionForm extends React.Component {
             </label>
           </div>
           <div className="session-errors">{this.renderErrors()}</div>
-          <button type="submit" className="session-button">
-            Submit
-          </button>
-          <button color="danger" className="demo-button" onClick={this.demoUser}>
+          <input type="submit" className="session-button" value="Submit"/>
+          <button className="demo-button" onClick={this.demoUser}>
             Use Demo Account
           </button>
         </form>
@@ -97,4 +95,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default (SessionForm);
