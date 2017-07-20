@@ -5,16 +5,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 350px;
   padding: 150px;
+  background: url('http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/banner_dbvd3k.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
 
-  .mainText {
+  .mainText2 {
     display: flex;
     text-align: center;
+    color: white;
   }
   .mainText {
     display: flex;
     font-size: 40px;
     text-align: center;
+    color: white;
   }
   .button {
     padding: 20px;

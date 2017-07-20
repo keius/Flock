@@ -20,6 +20,7 @@ title       | string    | not null
 description | string    |
 location    | string    |
 image_url   | string    |
+category_id | string    |
 
 ## events
 column name | data type | details
@@ -40,7 +41,7 @@ id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 event_id    | integer   | not null, foreign key (references events), indexed
 
-## follows
+## memberships
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

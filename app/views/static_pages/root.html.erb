@@ -3,11 +3,6 @@
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
-
-  window.images = {
-    logo: '<%= image_path('flock-logo.png') %>',
-    banner: '<%= image_path('banner.png') %>'
-  }
 </script>
 
 <main id="root">Not React</main>

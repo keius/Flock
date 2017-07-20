@@ -25,7 +25,7 @@ const MainNav = ({currentUser, logout}) => {
     <div className="mainNav">
       <div className="searchNav">Search</div>
       <Link to='/' className="homeNav">
-        <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500519267/flock-logo_ehueqd.png'/>
+        <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/logo.png'/>
       </Link>
       {main()}
     </div>
