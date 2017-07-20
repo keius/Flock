@@ -32,17 +32,17 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to='/signup'>Sign Up</Link>;
+      return <Link to='/signup' className="otherSession">Sign Up</Link>;
     } else {
-      return <Link to='/login'>Log In</Link>;
+      return <Link to='/login' className="otherSession">Log In</Link>;
     }
   }
 
   demoUser(e) {
     e.preventDefault();
-    this.state = {username: "greg", password: "123456"};
+    this.state = {username: "guest", password: "123456"};
     const user = this.state;
-		this.props.login({user});
+    this.props.demoLogin({user});
 	}
 
   renderErrors() {
@@ -59,12 +59,11 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="session-main">
+        <form onSubmit={this.handleSubmit} className="session-form-container">
           Welcome to Flock!
           <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
+          <p>Please {this.props.formType} or {this.navLink()}</p>
           <div className="session-form">
             <br/>
             <label>Username:
@@ -84,18 +83,14 @@ class SessionForm extends React.Component {
                 className="session-input"
               />
             </label>
-            <br/>
-            <input
-              type="submit"
-              value="Meet some people!"
-              className="session-button"
-            />
-            <br/>
-            <button
-              className="demo-login"
-              onClick={this.demoUser}>Use Demo Account
-            </button>
           </div>
+          <div className="session-errors">{this.renderErrors()}</div>
+          <button type="submit" className="session-button">
+            Submit
+          </button>
+          <button color="danger" className="demo-button" onClick={this.demoUser}>
+            Use Demo Account
+          </button>
         </form>
       </div>
     );

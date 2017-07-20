@@ -1,17 +1,46 @@
+@import 'variables';
+
 .mainNav {
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  align-items: baseline;
-}
+  align-items: center;
+  background-color: $flock-yellow;
 
-.homeNav {
-  display: flex;
-  align-items: baseline;
-}
+  .searchNav {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-.logo {
-  width: 100px;
-  height: 100px;
+  .homeNav {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+    .logo-text {
+      font-size: 40px;
+    }
+  }
+
+  .authNav {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    .button {
+      padding: 20px;
+      text-decoration: none;
+      background-color: $flock-blue;
+      transition: filter 0.2s ease;
+      &:hover{
+        background-color: $flock-indigo;
+      }
+      color: white;
+    }
+  }
 }

@@ -1,16 +1,19 @@
 import React from 'react';
-import MainNavContainer from './main/main_nav_container';
 import {Route} from 'react-router-dom';
-import SessionFormContainer from './session/session_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import MainNavContainer from './main/main_nav_container';
+import Banner from './main/banner';
+import SessionFormContainer from './session/session_form_container';
 
 const App = () => (
   <div>
     <header>
       <MainNavContainer/>
     </header>
-    <AuthRoute path='/login' component={SessionFormContainer}/>
-    <AuthRoute path='/signup' component={SessionFormContainer}/>
+    <div>
+      <AuthRoute path='/login' component={SessionFormContainer}/>
+      <AuthRoute path='/signup' component={SessionFormContainer}/>
+    </div>
   </div>
 );
 

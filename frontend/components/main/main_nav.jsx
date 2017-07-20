@@ -3,16 +3,16 @@ import {Link} from 'react-router-dom';
 import Modal from 'react-modal';
 
 const authLinks = () => (
-  <div className="col-md-4">
-    <Link to="/login">Log In</Link>
-    <Link to="/signup">Sign Up</Link>
+  <div className="authNav">
+    <Link to="/login" className="button">Log In</Link>
+    <Link to="/signup" className="button">Sign Up</Link>
   </div>
 );
 
 const greetLinks = (currentUser, logout) => (
-  <div className="col-md-4">
-    <h2>Welcome, {currentUser.username}!</h2>
-    <button className="logout" onClick={logout}>Log Out</button>
+  <div className="authNav">
+    <h2 className="button">Welcome, {currentUser.username}!</h2>
+    <button className="button" onClick={logout}>Log Out</button>
   </div>
 );
 
@@ -22,13 +22,14 @@ const MainNav = ({currentUser, logout}) => {
     greetLinks(currentUser, logout): authLinks()
   );
   return (
-    <nav className="row">
-      <div className="col-md-4">Search</div>
-      <Link to='/' className="col-md-4">
-        <img className="logo" src={window.images.logo}/>Flock
+    <div className="mainNav">
+      <div className="searchNav">Search</div>
+      <Link to='/' className="homeNav">
+        <img className="logo" src={window.images.logo}/>
+        <p className="logo-text">Flock</p>
       </Link>
       {main()}
-    </nav>
+    </div>
   );
 };
 
