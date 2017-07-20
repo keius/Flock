@@ -8,7 +8,8 @@ const MainBody = ({currentUser, logout}) => {
 
       <div className="mainText">
         What do you love?
-        <br/>
+      </div>
+      <div className="mainText2">
         Do more of it with Flock.
       </div>
 
