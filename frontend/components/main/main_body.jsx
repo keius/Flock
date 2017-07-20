@@ -5,7 +5,6 @@ const MainBody = ({currentUser, logout}) => {
 
   return (
     <div className="mainBanner">
-
       <div className="mainText">
         What do you love?
       </div>
