@@ -11,5 +11,5 @@ class Group < ApplicationRecord
 
   has_many :members,
     through: :memberships,
-    source: :users
+    source: :user
 end

@@ -6,6 +6,10 @@ class ProfileDetail extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchUserGroups(this.props.currentUser.id);
+  }
+
   render() {
     return (
       <div className="profile-background">

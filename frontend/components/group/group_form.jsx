@@ -4,7 +4,6 @@ class GroupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      category_id: "",
       title: "",
       description: "",
       location: "",
@@ -18,7 +17,7 @@ class GroupForm extends React.Component {
       this.props.history.push('/profile');
     }
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     const group = this.state;
