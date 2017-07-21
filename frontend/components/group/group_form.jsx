@@ -13,10 +13,16 @@ class GroupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/profile');
+    }
+  }
+  
   handleSubmit(e) {
     e.preventDefault();
     const group = this.state;
-    this.props.createGroup(group);
+    this.props.createGroup({group});
   }
 
   update(field) {
@@ -56,7 +62,7 @@ class GroupForm extends React.Component {
             <label>Description:
               <input
                 type="textarea"
-                value={this.state.title}
+                value={this.state.description}
                 onChange={this.update('description')}
                 className="group-input"
               />

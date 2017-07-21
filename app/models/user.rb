@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   has_many :memberships
 
   has_many :groups,
-    through: memberships,
-    source: groups
+    through: :memberships,
+    source: :groups
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
