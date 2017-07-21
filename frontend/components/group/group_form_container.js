@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
-import {receiveGroup, createGroup} from '../../actions/groups_actions';
+import {receiveGroup, createGroup} from '../../actions/group_actions';
 import GroupForm from './group_form';
 
-const mapStateToProps = ({session}) => ({
-  currentUser: session.currentUser
+const mapStateToProps = ({group}) => ({
+  errors: group.errors
 });
 
 const mapDispatchToProps = dispatch => ({

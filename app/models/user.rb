@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, uniqueness: true
@@ -7,6 +7,12 @@ class User < ApplicationRecord
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
+
+  has_many :memberships
+
+  has_many :groups,
+    through: memberships,
+    source: groups
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

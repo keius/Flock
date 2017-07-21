@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 const _nullGroup = Object.freeze({
   groups: {},
   group: {},
-  groupErrors: []
+  errors: []
 });
 
 const groupReducer = (state = _nullGroup, action) => {
@@ -28,9 +28,9 @@ const groupReducer = (state = _nullGroup, action) => {
       delete newState.groups[id];
       return newState;
     case RECEIVE_GROUP_ERRORS:
-      let groupErrors = action.groupErrors;
+      let errors = action.errors;
       newState = merge({}, state);
-      return merge({}, newState, {groupErrors});
+      return merge({}, newState, {errors});
     default:
       return state;
   }
