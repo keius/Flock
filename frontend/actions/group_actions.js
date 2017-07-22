@@ -30,6 +30,10 @@ export const fetchGroups = () => dispatch => (
   APIUtil.fetchGroups().then(groups => dispatch(receiveGroups(groups)))
 );
 
+export const fetchUserGroups = () => dispatch => (
+  APIUtil.fetchUserGroups().then(groups => dispatch(receiveGroups(groups)))
+);
+
 export const fetchGroup = (id) => dispatch => (
   APIUtil.fetchGroup(id).then(group => dispatch(receiveGroup(group)))
 );

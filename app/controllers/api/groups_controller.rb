@@ -21,7 +21,11 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    
+    if params[:current_user]
+      @groups = current_user.groups
+    else
+      @groups = Group.all
+    end
   end
 
   def show
@@ -36,6 +40,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:category_id, :title, :description, :location, :image_url)
+    params.require(:group).permit(:current_user, :category_id, :title, :description, :location, :image_url)
   end
 end
