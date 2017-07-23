@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 class ProfileDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {user: this.props.user};
   }
 
   componentDidMount() {
@@ -14,11 +13,12 @@ class ProfileDetail extends React.Component {
   renderGroups() {
     return(
       <ul>
-        {Object.keys(this.props.currentUser.groups).map(id => (
-          <li key={`group-${id}`}>
-            <Link className="group-link" to={`/groups/${id}`}>{this.props.groups[id].title}</Link>
+        {this.props.users.groups.forEach(group => (
+          <li key={`group-${group.id}`}>
+            <Link className="group-link" to={`/groups/${group.id}`}>{group.title}</Link>
           </li>
-        ))}
+        ))
+      }
       </ul>
     );
   }

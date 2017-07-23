@@ -1,4 +1,5 @@
-import { RECEIVE_GROUP, RECEIVE_ALL_GROUPS } from '../actions/group_actions';
+import merge from 'lodash/merge';
+import { RECEIVE_GROUP, RECEIVE_ALL_GROUPS, RECEIVE_GROUP_ERRORS } from '../actions/group_actions';
 
 const groupsReducer = (state = {}, action) => {
   Object.freeze(state);

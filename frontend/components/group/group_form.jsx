@@ -25,18 +25,6 @@ class GroupForm extends React.Component {
     });
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
     return (
       <div className="group-form-background">
@@ -81,7 +69,7 @@ class GroupForm extends React.Component {
             </label>
             <br/>
           </div>
-          <div className="group-errors">{this.renderErrors()}</div>
+          
           <input type="submit" className="group-button" value="Submit"/>
         </form>
       </div>

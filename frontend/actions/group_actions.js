@@ -16,11 +16,6 @@ export const receiveGroup = (group, user) => ({
   user
 });
 
-export const receiveGroupErrors = errors => ({
-  type: RECEIVE_GROUP_ERRORS,
-  errors
-});
-
 export const removeGroup = group => ({
   type: REMOVE_GROUP,
   group

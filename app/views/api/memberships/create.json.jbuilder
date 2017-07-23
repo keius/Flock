@@ -5,7 +5,6 @@ json.user do
       json.extract! group, :title, :id
     end
   end
-  json.profile_pic asset_path(@user.profile_pic.url)
 end
 
 json.group do

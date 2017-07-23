@@ -1,5 +1,4 @@
 class Api::GroupsController < ApplicationController
-  before_action :require_user
 
   def create
     @group = Group.new(group_params)
