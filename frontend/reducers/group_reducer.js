@@ -1,9 +1,10 @@
-import {RECEIVE_GROUPS, RECEIVE_GROUP, RECEIVE_GROUP_ERRORS, REMOVE_GROUP} from '../actions/group_actions';
+import {RECEIVE_GROUPS, RECEIVE_GROUP, RECEIVE_GROUP_MEMBERS, RECEIVE_GROUP_ERRORS, REMOVE_GROUP} from '../actions/group_actions';
 import merge from 'lodash/merge';
 
 const _nullGroup = Object.freeze({
   groups: {},
   group: {},
+  members: {},
   errors: []
 });
 
@@ -21,6 +22,11 @@ const groupReducer = (state = _nullGroup, action) => {
       newState = merge({}, state);
       newState.group = group;
       newState.groups[group.id] = group;
+      return newState;
+    case RECEIVE_GROUP_MEMBERS:
+      let members = action.members;
+      newState = merge({}, state);
+      newState.members = members;
       return newState;
     case REMOVE_GROUP:
       newState = merge({}, state);

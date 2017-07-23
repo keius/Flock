@@ -30,6 +30,9 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    if params[:members]
+      @group.members
+    end
   end
 
   def destroy
@@ -40,6 +43,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:current_user, :category_id, :title, :description, :location, :image_url)
+    params.require(:group).permit(:current_user, :members, :category_id, :title, :description, :location, :image_url)
   end
 end

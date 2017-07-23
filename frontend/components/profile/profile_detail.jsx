@@ -7,15 +7,12 @@ class ProfileDetail extends React.Component {
     this.props.fetchUserGroups();
   }
 
-
-
   renderGroups() {
-
     return(
       <ul>
         {Object.keys(this.props.groups).map(id => (
           <li key={`group-${id}`}>
-            {this.props.groups[id].title}
+            <Link className="group-link" to={`/groups/${id}`}>{this.props.groups[id].title}</Link>
           </li>
         ))}
       </ul>
