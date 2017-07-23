@@ -2,18 +2,21 @@ class Api::MembershipsController < ApplicationController
   def create
     @membership = Membership.new(membership_params)
     if @membership.save
-      render json: ["membership created"]
+      @user = User.find(@membership.user_id)
+      @group = Group.includes(:members, :owner).find(@membership.group_id)
+      render :create
     else
       render json: @membership.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    user_id = params[:user_id]
-    group_id = params[:group_id]
-    @membership = Membership.where(:user_id => user_id).where(:group_id => group_id)
-    @membership[0].destroy
-    render json: ["Object destroyed"]
+    membership = Membership.where("group_id = ?", params[:group_id]).find_by(user_id: current_user.id)
+    if membership.destroy
+      render :show
+    else
+      render json: ["Cannot remove"], status: 404
+    end
   end
 
   private

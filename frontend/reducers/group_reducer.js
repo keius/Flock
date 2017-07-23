@@ -1,10 +1,9 @@
-import {RECEIVE_GROUPS, RECEIVE_GROUP, RECEIVE_GROUP_MEMBERS, RECEIVE_GROUP_ERRORS, REMOVE_GROUP} from '../actions/group_actions';
+import {RECEIVE_GROUPS, RECEIVE_GROUP, RECEIVE_NEW_GROUP, RECEIVE_GROUP_ERRORS, REMOVE_GROUP} from '../actions/group_actions';
 import merge from 'lodash/merge';
 
 const _nullGroup = Object.freeze({
   groups: {},
   group: {},
-  members: {},
   errors: []
 });
 

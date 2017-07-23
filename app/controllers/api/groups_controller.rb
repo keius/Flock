@@ -5,47 +5,42 @@ class Api::GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
     if @group.save
-      render 'api/groups/show'
+      Membership.create({user_id: @group.owner_id, group_id: @group.id})
+      @user = current_user
+      render :create
     else
-      render @group.errors.full_messages, status: 422
+      render json: @group.errors.full_messages, status: 422
     end
   end
 
   def update
     @group = Group.find(params[:id])
     if @group.update_attributes(group_params)
-      render 'api/groups/show'
+      render :update
     else
-      render @group.errors.full_messages, status: 422
+      render json: @group.errors.full_messages, status: 422
     end
   end
 
   def index
-    if params[:current_user]
-      @groups = current_user.groups
-    else
-      @groups = Group.all
-    end
+    @groups = Group.includes(:members, :owner)
+    render :index
   end
 
   def show
-    @group = Group.find(params[:id])
-    if params[:members]
-      @users = @group.members
-      render 'api/users/index'
-    else
-      render 'api/groups/show'
-    end
+    @group = Group.includes(:members, :organizer).find(params[:id])
+    render :show
   end
 
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    render ['Object destroyed']
+    @user = current_user
+    render :destroy
   end
 
   private
   def group_params
-    params.require(:group).permit(:current_user, :members, :category_id, :title, :description, :location, :image_url)
+    params.require(:group).permit(:title, :description, :location, :image_url)
   end
 end

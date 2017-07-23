@@ -28,7 +28,11 @@ class GroupDetail extends React.Component {
   }
 
   membershipButton() {
-    this.props.fetchGroupMembers(this.props.match.params.id);
+    if (Object.keys(this.props.members).includes(this.props.currentUser.id)) {
+      return <button className="button" onClick={this.leaveGroup}>Leave Group</button>
+    } else {
+      return <button className="button" onClick={this.joinGroup}>Join Group</button>
+    }
   }
 
   renderMembers() {
@@ -66,10 +70,9 @@ class GroupDetail extends React.Component {
           {this.renderMembers()}
         </div>
 
-        <button className="button" onClick={this.joinGroup}>Join Group</button>
-        <br/>
-        <button className="button" onClick={this.leaveGroup}>Leave Group</button>
-
+        <div>
+          {this.membershipButton()}
+        </div>
       </div>
     );
   }

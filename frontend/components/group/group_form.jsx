@@ -10,12 +10,7 @@ class GroupForm extends React.Component {
       image_url: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/profile');
-    }
+    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {

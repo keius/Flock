@@ -5,14 +5,6 @@ export const fetchGroups = () => (
   })
 );
 
-export const fetchUserGroups = () => (
-  $.ajax({
-    method: 'GET',
-    url: 'api/groups',
-    data: {current_user: true}
-  })
-);
-
 export const fetchGroup = (id) => (
   $.ajax({
     method: 'GET',
@@ -20,19 +12,11 @@ export const fetchGroup = (id) => (
   })
 );
 
-export const fetchGroupMembers = (id) => (
-  $.ajax({
-    method: 'GET',
-    url: `api/groups/${id}`,
-    data: {members: true}
-  })
-);
-
 export const createGroup = (group) => (
   $.ajax({
     method: 'POST',
     url: 'api/groups',
-    data: group
+    data: {group}
   })
 );
 
@@ -40,7 +24,7 @@ export const updateGroup = (group) => (
   $.ajax({
     method: 'PATCH',
     url: `api/groups/${group.id}`,
-    data: group
+    data: {group}
   })
 );
 
