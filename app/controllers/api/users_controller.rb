@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:joined_groups).find(params[:id])
+    @user = User.includes(:groups).find(params[:id])
   end
 
   def update

@@ -1,8 +1,10 @@
-<script id="bootstrap-current-user" type="text/javascript">
-  <% if logged_in? %>
-  	window.currentUser = <%= render("api/shared/user.json.jbuilder",
-  		user: current_user).html_safe %>
-  <% end %>
-</script>
+<script type="text/javascript">
+<% if logged_in? %>
+   window.currentUser = <%= render(
+     "api/shared/users.json.jbuilder",
+     user: current_user
+   ).html_safe %>
+ <% end %>
+ </script>
 
 <main id="root">Not React</main>

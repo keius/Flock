@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm(user);
   }
 
   navLink() {
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.state = {username: "guest", password: "123456"};
     const user = this.state;
-    this.props.demoLogin({user});
+    this.props.demoLogin(user);
 	}
 
   renderErrors() {

@@ -5,7 +5,7 @@ export const editUser = (user) => {
     dataType: "json",
     contentType: false,
     processData: false,
-    data: user
+    data: {user}
   });
 };
 
