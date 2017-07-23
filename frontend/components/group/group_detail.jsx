@@ -62,6 +62,8 @@ class GroupDetail extends React.Component {
         </div>
 
         <div className="group-members">
+          Members:
+          {this.renderMembers()}
         </div>
 
         <button className="button" onClick={this.joinGroup}>Join Group</button>

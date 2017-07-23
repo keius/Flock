@@ -31,7 +31,10 @@ class Api::GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     if params[:members]
-      @group.members
+      @users = @group.members
+      render 'api/users/index'
+    else
+      render 'api/groups/show'
     end
   end
 
