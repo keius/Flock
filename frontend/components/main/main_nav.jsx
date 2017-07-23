@@ -11,7 +11,7 @@ const authLinks = () => (
 
 const greetLinks = (currentUser, logout) => (
   <div className="authNav">
-    <h2 className="button">Welcome, {currentUser.username}!</h2>
+    <h2 className="button">Welcome, {currentUser.full_name}!</h2>
     <button className="button" onClick={logout}>Log Out</button>
   </div>
 );

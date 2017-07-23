@@ -10,13 +10,13 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:joined_groups).find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      render 'api/users/show'
+      render :update
     else
       render json: @user.errors.full_messages, status: 422
     end

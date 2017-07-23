@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170721002150) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "owner_id",    null: false
-    t.string   "category_id"
+    t.string   "category"
     t.string   "title",       null: false
     t.string   "description"
     t.string   "location"

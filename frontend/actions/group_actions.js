@@ -10,9 +10,10 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveGroup = group => ({
+export const receiveGroup = (group, user) => ({
   type: RECEIVE_GROUP,
-  group
+  group,
+  user
 });
 
 export const receiveGroupErrors = errors => ({
@@ -44,4 +45,12 @@ export const updateGroup = (group) => dispatch => (
 
 export const deleteGroup = (id) => dispatch => (
   APIUtil.deleteGroup(id).then(() => dispatch(fetchGroups()))
+);
+
+export const joinGroup = (groupId, userId) => dispatch => (
+  APIUtil.joinGroup(groupId, userId).then(data => dispatch(receiveGroup(data.group, data.user)))
+);
+
+export const leaveGroup = (groupId) => dispatch => (
+  APIUtil.leaveGroup(groupId)
 );

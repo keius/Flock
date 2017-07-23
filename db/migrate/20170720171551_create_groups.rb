@@ -2,7 +2,7 @@ class CreateGroups < ActiveRecord::Migration[5.0]
   def change
     create_table :groups do |t|
       t.string :owner_id, null: false
-      t.string :category_id
+      t.string :category
       t.string :title, null: false
       t.string :description
       t.string :location
