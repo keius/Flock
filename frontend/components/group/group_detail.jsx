@@ -4,43 +4,40 @@ import {Link} from 'react-router-dom';
 class GroupDetail extends React.Component {
   constructor (props) {
     super(props);
-    this.joinGroup = this.joinGroup.bind(this);
-    this.leaveGroup = this.leaveGroup.bind(this);
+    this.handleJoin = this.handleJoin.bind(this);
+    this.handleLeave = this.handleLeave.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.id);
-    this.props.fetchGroupMembers(this.props.match.params.id);
   }
 
-  joinGroup(e) {
+  handleJoin(e) {
     e.preventDefault();
-    let membership = {user_id: this.props.currentUser.id, group_id: this.props.group.id};
-    this.props.createMembership({membership});
+    this.props.joinGroup(this.props.group.id, this.props.currentUser.id);
     this.props.fetchGroup(this.props.match.params.id);
   }
 
-  leaveGroup(e) {
+  handleLeave(e) {
     e.preventDefault();
-    let membership = {user_id: this.props.currentUser.id, group_id: this.props.group.id};
-    this.props.deleteMembership({membership});
+    this.props.leaveGroup(this.props.group.id);
     this.props.fetchGroup(this.props.match.params.id);
   }
 
   membershipButton() {
-    if (Object.keys(this.props.members).includes(this.props.currentUser.id)) {
-      return <button className="button" onClick={this.leaveGroup}>Leave Group</button>
+    if ((this.props.group.members).map(member => (member.id)).includes(this.props.currentUser.id)) {
+      return <button className="button" onClick={this.handleLeave}>Leave Group</button>;
     } else {
-      return <button className="button" onClick={this.joinGroup}>Join Group</button>
+      return <button className="button" onClick={this.handleJoin}>Join Group</button>;
     }
   }
 
   renderMembers() {
     return(
       <ul className="member-list">
-        {Object.keys(this.props.members).map(id => (
-          <li key={`user-${id}`}>
-            {this.props.members[id].username}
+        {(this.props.group.members).map(member => (
+          <li key={`member-${member.id}`}>
+            {member.full_name}
           </li>
         ))}
       </ul>
@@ -48,33 +45,36 @@ class GroupDetail extends React.Component {
   }
 
   render() {
-    console.log(this.props.members);
-    return (
-      <div className="group-background">
-        <div className="group-banner">
-          {this.props.group.image_url}
-        </div>
+    if (this.props.group) {
+      return (
+        <div className="group-background">
+          <div className="group-banner">
+            {this.props.group.image_url}
+          </div>
 
-        <div className="group-details">
-          {this.props.group.title}
-          <br/>
-          Owner: {this.props.group.owner_id}
-          <br/>
-          Description: {this.props.group.description}
-          <br/>
-          Location: {this.props.group.location}
-        </div>
+          <div className="group-details">
+            {this.props.group.title}
+            <br/>
+            Owner: {this.props.group.owner_id}
+            <br/>
+            Description: {this.props.group.description}
+            <br/>
+            Location: {this.props.group.location}
+          </div>
 
-        <div className="group-members">
-          Members:
-          {this.renderMembers()}
-        </div>
+          <div className="group-members">
+            Members:
+            {this.renderMembers()}
+          </div>
 
-        <div>
-          {this.membershipButton()}
+          <div>
+            {this.membershipButton()}
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (<div></div>);
+    }
   }
 }
 

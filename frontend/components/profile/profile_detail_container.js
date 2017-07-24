@@ -4,7 +4,7 @@ import ProfileDetail from './profile_detail';
 
 const mapStateToProps = ({session, users}) => ({
   currentUser: session.currentUser,
-  user: users
+  user: users.user
 });
 
 const mapDispatchToProps = dispatch => ({

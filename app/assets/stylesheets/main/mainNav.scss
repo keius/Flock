@@ -33,15 +33,17 @@
     margin-right: 10px;
     align-items: center;
     justify-content: flex-end;
-    .button {
-      padding: 20px;
-      text-decoration: none;
-      background-color: $flock-blue;
-      transition: filter 0.2s ease;
-      &:hover{
-        background-color: $flock-indigo;
-      }
-      color: white;
+  }
+
+
+  .button {
+    padding: 20px;
+    text-decoration: none;
+    background-color: $flock-blue;
+    transition: filter 0.2s ease;
+    &:hover{
+      background-color: $flock-indigo;
     }
+    color: white;
   }
 }

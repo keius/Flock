@@ -1,6 +1,17 @@
 @import 'variables';
 
 .profile-background {
-  height: 500px;
-  background-color: $flock-sky
+
+}
+
+.profile-bio {
+  margin: 20px;
+  padding: 100px;
+  background-color: lightgrey;
+}
+
+.profile-group-list {
+  margin: 20px;
+  padding: 100px;
+  background-color: lightgrey;
 }

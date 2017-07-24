@@ -11,26 +11,33 @@ class ProfileDetail extends React.Component {
   }
 
   renderGroups() {
-    return(
-      <ul>
-        {this.props.users.groups.forEach(group => (
-          <li key={`group-${group.id}`}>
-            <Link className="group-link" to={`/groups/${group.id}`}>{group.title}</Link>
-          </li>
-        ))
-      }
-      </ul>
-    );
+    if (this.props.user) {
+      return(
+        <ul>
+          {this.props.user.groups.map(group => (
+            <li className="group" key={`group-${group.id}`}>
+              <Link className="group-link" to={`/groups/${group.id}`}>{group.title}</Link>
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
     return (
       <div className="profile-background">
-        Hello, {this.props.currentUser.full_name}!
-        <div className="group-list">
+        <Link className="button" to='/groups/create'>Create Group!</Link>
+
+        <div className="profile-bio">
+          <h1>{this.props.currentUser.full_name}</h1>
+          <img src={this.props.currentUser.image_url}/>
+        </div>
+
+        <div className="profile-group-list">
+          Groups:
           {this.renderGroups()}
         </div>
-        <Link to='/groups/create'>Create Group!</Link>
       </div>
     );
   }

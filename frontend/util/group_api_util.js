@@ -39,7 +39,7 @@ export const joinGroup = (groupId, userId) => {
   return $.ajax({
     method: 'POST',
     url: `/api/groups/${groupId}/memberships`,
-    data: { membership: {group_id: groupId, member_id: userId } }
+    data: { membership: {group_id: groupId, user_id: userId } }
   });
 };
 

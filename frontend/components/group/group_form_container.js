@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {createGroup, fetchGroups} from '../../actions/group_actions';
+import {createGroup} from '../../actions/group_actions';
 import GroupForm from './group_form';
 
 const mapStateToProps = (state) => ({

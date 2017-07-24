@@ -1,6 +1,6 @@
 json.user do
   json.extract! @user, :full_name, :id
-  json.joined_groups do
+  json.groups do
     json.array! @user.groups do |group|
       json.extract! group, :title, :id
     end

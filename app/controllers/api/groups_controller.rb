@@ -27,7 +27,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:members, :organizer).find(params[:id])
+    @group = Group.includes(:members, :owner).find(params[:id])
     render :show
   end
 
