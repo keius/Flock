@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ProfileNav from './profile_nav';
 
 class ProfileDetail extends React.Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class ProfileDetail extends React.Component {
   render() {
     return (
       <div className="profile-background">
-        <Link className="button" to='/groups/create'>Create Group!</Link>
+        <div>
+          {ProfileNav}
+        </div>
 
         <div className="profile-bio">
           <h1>{this.props.currentUser.full_name}</h1>

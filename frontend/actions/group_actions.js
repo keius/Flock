@@ -40,11 +40,3 @@ export const updateGroup = (group) => dispatch => (
 export const deleteGroup = (id) => dispatch => (
   APIUtil.deleteGroup(id).then(() => dispatch(fetchGroups()))
 );
-
-export const joinGroup = (groupId, userId) => dispatch => (
-  APIUtil.joinGroup(groupId, userId).then(data => dispatch(receiveGroup(data.group, data.user)))
-);
-
-export const leaveGroup = (groupId) => dispatch => (
-  APIUtil.leaveGroup(groupId)
-);

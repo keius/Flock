@@ -9,9 +9,32 @@ export const editUser = (user) => {
   });
 };
 
+export const fetchUsers = (params) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users`,
+    data: params
+  });
+};
+
 export const fetchUser = (userId) => {
   return $.ajax({
     method: 'GET',
     url: `/api/users/${userId}`
+  });
+};
+
+export const joinGroup = (groupId) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/groups/${groupId}/memberships`,
+    data: { membership: {group_id: groupId } }
+  });
+};
+
+export const leaveGroup = (groupId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/groups/${groupId}/memberships`
   });
 };

@@ -14,14 +14,12 @@ class GroupDetail extends React.Component {
 
   handleJoin(e) {
     e.preventDefault();
-    this.props.joinGroup(this.props.group.id, this.props.currentUser.id);
-    this.props.fetchGroup(this.props.match.params.id);
+    this.props.joinGroup(this.props.group.id);
   }
 
   handleLeave(e) {
     e.preventDefault();
     this.props.leaveGroup(this.props.group.id);
-    this.props.fetchGroup(this.props.match.params.id);
   }
 
   membershipButton() {
@@ -55,7 +53,7 @@ class GroupDetail extends React.Component {
           <div className="group-details">
             {this.props.group.title}
             <br/>
-            Owner: {this.props.group.owner_id}
+            Owner: {this.props.group.owner.full_name}
             <br/>
             Description: {this.props.group.description}
             <br/>

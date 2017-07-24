@@ -1,10 +1,10 @@
 class Api::MembershipsController < ApplicationController
   def create
     @membership = Membership.new(membership_params)
+    @membership.user_id = current_user.id
     if @membership.save
       @user = User.find(@membership.user_id)
-      @group = Group.includes(:members, :owner).find(@membership.group_id)
-      render :create
+      render :show
     else
       render json: @membership.errors.full_messages, status: 422
     end
