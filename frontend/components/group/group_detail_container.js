@@ -1,15 +1,18 @@
 import {connect} from 'react-redux';
-import {fetchGroup, joinGroup, leaveGroup} from '../../actions/group_actions';
+import {fetchGroup} from '../../actions/group_actions';
+import {fetchGroupUsers, joinGroup, leaveGroup} from '../../actions/user_actions';
 import GroupDetail from './group_detail';
 
-const mapStateToProps = ({session, groups}) => ({
+const mapStateToProps = ({session, groups, users}, ownProps) => ({
   currentUser: session.currentUser,
-  group: groups.group
+  group: groups.groups[ownProps.match.params.id],
+  users: users.users
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchGroup: id => dispatch(fetchGroup(id)),
-  joinGroup: (groupId, userId) => dispatch(joinGroup(groupId, userId)),
+  fetchGroupUsers: id => dispatch(fetchGroupUsers(id)),
+  joinGroup: groupId => dispatch(joinGroup(groupId)),
   leaveGroup: groupId => dispatch(leaveGroup(groupId))
 });
 

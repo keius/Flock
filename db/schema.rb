@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170721002150) do
     t.string   "owner_id",    null: false
     t.string   "category"
     t.string   "title",       null: false
-    t.string   "description"
+    t.text     "description"
     t.string   "location"
     t.string   "image_url"
     t.datetime "created_at",  null: false
@@ -37,14 +37,16 @@ ActiveRecord::Schema.define(version: 20170721002150) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
-    t.string   "email"
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
-    t.string   "full_name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "location"
+    t.text     "about"
     t.string   "image_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["username", "email", "session_token"], name: "index_users_on_username_and_email_and_session_token", unique: true, using: :btree
+    t.index ["first_name", "image_url", "session_token"], name: "index_users_on_first_name_and_image_url_and_session_token", unique: true, using: :btree
   end
 
 end

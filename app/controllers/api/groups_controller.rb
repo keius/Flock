@@ -22,12 +22,16 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.includes(:members, :owner)
+    if params[:user_id]
+      @groups = User.find(params[:user_id]).groups
+    else
+      @groups = Group.all
+    end
     render :index
   end
 
   def show
-    @group = Group.includes(:members, :owner).find(params[:id])
+    @group = Group.includes(:owner).find(params[:id])
     render :show
   end
 

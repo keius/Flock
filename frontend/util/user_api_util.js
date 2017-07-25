@@ -9,11 +9,11 @@ export const editUser = (user) => {
   });
 };
 
-export const fetchUsers = (params) => {
+export const fetchGroupUsers = (id) => {
   return $.ajax({
     method: 'GET',
     url: `/api/users`,
-    data: params
+    data: {group_id: id}
   });
 };
 

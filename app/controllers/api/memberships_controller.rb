@@ -12,8 +12,9 @@ class Api::MembershipsController < ApplicationController
 
   def destroy
     membership = Membership.where("group_id = ?", params[:group_id]).find_by(user_id: current_user.id)
+    @user = membership.user
     if membership.destroy
-      render json: membership
+      render '/api/users/show'
     else
       render json: ["You are not part of this group!"], status: 404
     end

@@ -1,3 +1,5 @@
-json.array! @groups do |group|
-  json.extract! group, :id, :title, :description, :location, :image_url
+@groups.each do |group|
+  json.set! group.id do
+    json.partial! '/api/shared/group', group: group
+  end
 end

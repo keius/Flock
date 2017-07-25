@@ -16,7 +16,7 @@ class GroupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const group = this.state;
-    this.props.createGroup(group);
+    this.props.createGroup(group).then(this.props.closeModal);
   }
 
   update(field) {
@@ -68,9 +68,8 @@ class GroupForm extends React.Component {
               />
             </label>
             <br/>
+            <input type="submit" value="Submit"/>
           </div>
-          
-          <input type="submit" className="group-button" value="Submit"/>
         </form>
       </div>
     );

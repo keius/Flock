@@ -1,19 +1,36 @@
 User.destroy_all
 
-guestUser = User.create({username: "guest", password: "123456", full_name: "guest"});
+guestUser = User.create({
+  username: "guest", password: "123456",
+  first_name: "Gilbert", last_name: "Guest",
+  location: "Everywhere", about: "Undefined Person",
+  image_url: "guest_user"
+  })
 
-user1 = User.create({username: "user1", password: "123456", full_name: "user1"})
-user2 = User.create({username: "user2", password: "123456", full_name: "user2"})
-user3 = User.create({username: "user3", password: "123456", full_name: "user3"})
-user4 = User.create({username: "user4", password: "123456", full_name: "user4"})
-user5 = User.create({username: "user5", password: "123456", full_name: "user5"})
+obama = User.create({
+  username: "obama", password: "123456",
+  first_name: "Barack", last_name: "Obama",
+  location: "Washington D.C.", about: "Travelling enthusiast. Family man.",
+  image_url: "obama"
+  })
 
-group1 = Group.create({owner_id: user1.id, title: "group1", description: "first", location: "SF"})
-group2 = Group.create({owner_id: user2.id, title: "group2", description: "second", location: "CHI"})
-group3 = Group.create({owner_id: user3.id, title: "group3", description: "third", location: "NY"})
+trump = User.create({
+  username: "trump", password: "123456",
+  first_name: "Donald", last_name: "Trump",
+  location: "Washington D.C.", about: "Currently making America great again.",
+  image_url: "trump"
+  })
 
-membership1 = Membership.create({user_id: user1.id, group_id: group1.id})
-membership2 = Membership.create({user_id: user2.id, group_id: group1.id})
-membership3 = Membership.create({user_id: user3.id, group_id: group1.id})
-membership4 = Membership.create({user_id: user4.id, group_id: group2.id})
-membership5 = Membership.create({user_id: user5.id, group_id: group2.id})
+mcdonald = User.create({
+  username: "mcdonald", password: "123456",
+  first_name: "Ronald", last_name: "McDonald",
+  location: "PlayPlace", about: "I'm lovin' it.",
+  image_url: "mcdonald"
+  })
+
+spiderman = User.create({
+  username: "spiderman", password: "123456",
+  first_name: "Peter", last_name: "Parker",
+  location: "PlayPlace", about: "I'm lovin' it.",
+  image_url: "spiderman"
+  })

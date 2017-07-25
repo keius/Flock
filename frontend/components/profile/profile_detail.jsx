@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ProfileNav from './profile_nav';
+import GroupFormModal from '../modal/group_form_modal';
 
 class ProfileDetail extends React.Component {
   constructor(props) {
@@ -8,39 +8,39 @@ class ProfileDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUser.id);
+    this.props.fetchUserGroups(this.props.currentUser.id);
   }
 
   renderGroups() {
-    if (this.props.user) {
-      return(
-        <ul>
-          {this.props.user.groups.map(group => (
-            <li className="group" key={`group-${group.id}`}>
-              <Link className="group-link" to={`/groups/${group.id}`}>{group.title}</Link>
-            </li>
-          ))}
-        </ul>
-      );
-    }
+    return(
+      <ul>
+        {this.props.groups.map(group => (
+          <li className="group" key={`group-${group.id}`}>
+            <Link to={`/groups/${group.id}`}>{group.title}</Link>
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     return (
       <div className="profile-background">
-        <div>
-          {ProfileNav}
-        </div>
 
-        <div className="profile-bio">
-          <h1>{this.props.currentUser.full_name}</h1>
+        <nav className="profile-nav">
+          <GroupFormModal/>
+        </nav>
+
+        <section className="profile-info">
+          <h1>{this.props.currentUser.first_name}</h1>
           <img src={this.props.currentUser.image_url}/>
-        </div>
+        </section>
 
-        <div className="profile-group-list">
-          Groups:
+        <p className="profile-groups-header">Groups</p>
+
+        <section className="profile-group-list">
           {this.renderGroups()}
-        </div>
+        </section>
       </div>
     );
   }

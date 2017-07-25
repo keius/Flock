@@ -5,6 +5,14 @@ export const fetchGroups = () => (
   })
 );
 
+export const fetchUserGroups = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/groups',
+    data: {user_id: id}
+  })
+);
+
 export const fetchGroup = (id) => (
   $.ajax({
     method: 'GET',

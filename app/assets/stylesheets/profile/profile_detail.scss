@@ -1,0 +1,41 @@
+@import 'variables';
+
+.profile-background {
+
+}
+
+.profile-info {
+  margin: 20px;
+  padding: 100px;
+  background-color: lightgrey;
+}
+
+.profile-groups-header {
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+}
+
+.profile-group-list {
+
+  margin: 20px;
+  padding: 100px;
+  background-color: lightgrey;
+}
+
+.profile-nav {
+  display: flex;
+  margin: 40px;
+  justify-content: center;
+}
+
+.button {
+  padding: 20px;
+  text-decoration: none;
+  background-color: $flock-blue;
+  transition: filter 0.2s ease;
+  &:hover{
+    background-color: $flock-indigo;
+  }
+  color: white;
+}

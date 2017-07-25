@@ -22,7 +22,6 @@ const App = () => (
       </Switch>
 
       <Switch>
-        <Route exact path='/groups/create' component={GroupFormContainer}/>
         <Route exact path='/groups/:id' component={GroupDetailContainer}/>
       </Switch>
     </div>

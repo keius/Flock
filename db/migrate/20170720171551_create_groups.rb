@@ -4,7 +4,7 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.string :owner_id, null: false
       t.string :category
       t.string :title, null: false
-      t.string :description
+      t.text :description
       t.string :location
       t.string :image_url
 

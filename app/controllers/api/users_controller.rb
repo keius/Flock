@@ -9,6 +9,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = Group.find(params[:group_id]).members
+    render :index
+  end
+
   def show
     @user = User.includes(:groups).find(params[:id])
   end
@@ -24,6 +29,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password, :full_name, :image_url)
+    params.require(:user).permit(:group_id, :username, :password, :first_name, :last_name, :location, :about, :image_url)
   end
 end

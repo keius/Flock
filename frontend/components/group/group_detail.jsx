@@ -10,6 +10,7 @@ class GroupDetail extends React.Component {
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.id);
+    this.props.fetchGroupUsers(this.props.match.params.id);
   }
 
   handleJoin(e) {
@@ -23,7 +24,7 @@ class GroupDetail extends React.Component {
   }
 
   membershipButton() {
-    if ((this.props.group.members).map(member => (member.id)).includes(this.props.currentUser.id)) {
+    if (this.props.users[this.props.currentUser.id]) {
       return <button className="button" onClick={this.handleLeave}>Leave Group</button>;
     } else {
       return <button className="button" onClick={this.handleJoin}>Join Group</button>;
@@ -31,15 +32,17 @@ class GroupDetail extends React.Component {
   }
 
   renderMembers() {
-    return(
-      <ul className="member-list">
-        {(this.props.group.members).map(member => (
-          <li key={`member-${member.id}`}>
-            {member.full_name}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.users) {
+      return(
+        <ul className="member-list">
+          {Object.keys(this.props.users).map(id => (
+            <li key={`member-${id}`}>
+              {this.props.users[id].first_name}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
@@ -53,7 +56,7 @@ class GroupDetail extends React.Component {
           <div className="group-details">
             {this.props.group.title}
             <br/>
-            Owner: {this.props.group.owner.full_name}
+            Owner: {this.props.group.owner.first_name}
             <br/>
             Description: {this.props.group.description}
             <br/>

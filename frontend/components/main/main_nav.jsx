@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Modal from 'react-modal';
 
 const authLinks = () => (
   <div className="authNav">
@@ -11,7 +10,7 @@ const authLinks = () => (
 
 const greetLinks = (currentUser, logout) => (
   <div className="authNav">
-    <h2 className="button">Welcome, {currentUser.full_name}!</h2>
+    <h3 className="button">Welcome, {currentUser.first_name}!</h3>
     <button className="button" onClick={logout}>Log Out</button>
   </div>
 );
