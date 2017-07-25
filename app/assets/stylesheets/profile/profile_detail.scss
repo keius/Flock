@@ -5,22 +5,73 @@
 }
 
 .profile-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 20px;
   padding: 100px;
   background-color: lightgrey;
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    .profile-img {
+      display: flex;
+      width: 200px;
+      height: auto;
+    }
+
+    .profile-name{
+      display:flex;
+      font-size: 30px;
+    }
+  }
+
+  .profile-bio {
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+
+    .profile-location {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      justify-content: center;
+      background-color: white;
+    }
+
+    .profile-about {
+      display: flex;
+      margin: 20px;
+      justify-content: center;
+      background-color: white;
+    }
+  }
 }
 
 .profile-groups-header {
   display: flex;
-  font-size: 25px;
+  font-size: 40px;
   justify-content: center;
 }
 
 .profile-group-list {
-
   margin: 20px;
   padding: 100px;
   background-color: lightgrey;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  img {
+    margin: 10px;
+    width: 350px;
+    height: 280px;
+  }
 }
 
 .profile-nav {

@@ -53,7 +53,7 @@ mickey = User.create({
 hermione = User.create({
   username: "hermione", password: "123456",
   first_name: "Hermione", last_name: "Granger",
-  location: "Hogwarts", about: "Books! And cleverness! There are more important things! — Friendship! And Food!",
+  location: "Hogwarts", about: "Books! And cleverness! There are more important things! — Friendship! And Food.",
   image_url: "hermione"
   })
 
@@ -133,7 +133,12 @@ spongebob = User.create({
   image_url: "spongebob"
   })
 
+
+
+
+
 # GROUPS
+Group.destroy_all
 
 # TECH
 hogwarts_js = Group.create({
@@ -180,7 +185,7 @@ scubadiving_bb = Group.create({
   })
 
 hikers_mordor = Group.create({
-  owner_id: frodo.id, category: "adventure", title: "Hikers of Morder",
+  owner_id: frodo.id, category: "adventure", title: "Hikers of Mordor",
   description: "Day-long trip to Sauron. Bring a Sam.",
   location: "Mordor", image_url: "hikers_mordor"
   })
@@ -217,7 +222,7 @@ instrument_jam = Group.create({
   })
 
 blues_lovers = Group.create({
-  owner_id: barack.id, category: "music", title: "Blues Lovers",
+  owner_id: obama.id, category: "music", title: "Blues Lovers",
   description: "A jolly time with some classics",
   location: "DC", image_url: "blues_lovers"
   })
@@ -324,7 +329,7 @@ nine_hole = Group.create({
 
 occasional_ball = Group.create({
   owner_id: obama.id, category: "sports", title: "Occasional Ball",
-  description: "barack o-balla",
+  description: "Barack o-balla",
   location: "My backyard", image_url: "occasional_ball"
   })
 
@@ -341,7 +346,7 @@ fitness_friends = Group.create({
   })
 
 # BELIEFS
-dragons_real Group.create({
+dragons_real = Group.create({
   owner_id: daenerys.id, category: "beliefs", title: "Are Dragons Real?",
   description: "Come see for yourself",
   location: "NYC", image_url: "dragons_real"
@@ -373,7 +378,7 @@ vegetarian_society = Group.create({
   })
 
 letdobrunch = Group.create({
-  owner_id: barack.id, category: "food", title: "Let's Do Brunch",
+  owner_id: obama.id, category: "food", title: "Let's Do Brunch",
   description: "Some brunch, some tea, some politics",
   location: "My garden", image_url: "letdobrunch"
   })
@@ -383,3 +388,22 @@ italian_hagrid = Group.create({
   description: "A masterclass from the biggest guy",
   location: "Hagrid's cabin", image_url: "italian_hagrid"
   })
+
+
+
+
+
+# MEMBERSHIPS
+Membership.destroy_all
+
+[ruby_rails, christmas_hogsmeade, hikers_mordor, stay_home_dads, ultimate_wealth_builders, omg_food].each do |group|
+  Membership.create({user_id: guest.id, group_id: group.id})
+end
+
+Group.all.each do |group|
+  num_members = rand(9) + 3
+  User.all.shuffle[0..num_members].each do |new_member|
+    Membership.create({user_id: new_member.id, group_id: group.id})
+  end
+  Membership.create({user_id: group.owner_id, group_id: group.id})
+end

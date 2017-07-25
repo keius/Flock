@@ -16,7 +16,10 @@ class ProfileDetail extends React.Component {
       <ul>
         {this.props.groups.map(group => (
           <li className="group" key={`group-${group.id}`}>
-            <Link to={`/groups/${group.id}`}>{group.title}</Link>
+            <Link className="group-link" to={`/groups/${group.id}`}>
+              <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${group.image_url}`}/>
+              {group.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -32,8 +35,23 @@ class ProfileDetail extends React.Component {
         </nav>
 
         <section className="profile-info">
-          <h1>{this.props.currentUser.first_name}</h1>
-          <img src={this.props.currentUser.image_url}/>
+          <div className="profile">
+            <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.currentUser.image_url}`}/>
+            <br/>
+            <h1 className="profile-name">{this.props.currentUser.first_name}&nbsp;{this.props.currentUser.last_name}</h1>
+          </div>
+          <ul className="profile-bio">
+            <li className="profile-location">
+              Location:
+              <br/>
+              {this.props.currentUser.location}
+            </li>
+            <li className="profile-about">
+              About:
+              <br/>
+              {this.props.currentUser.about}
+            </li>
+          </ul>
         </section>
 
         <p className="profile-groups-header">Groups</p>
