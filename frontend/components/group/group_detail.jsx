@@ -36,8 +36,10 @@ class GroupDetail extends React.Component {
       return(
         <ul className="member-list">
           {Object.keys(this.props.users).map(id => (
-            <li key={`member-${id}`}>
-              {this.props.users[id].first_name}
+            <li className="member-profile" key={`member-${id}`}>
+              <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/v1500965480/user/${this.props.users[id].image_url}`}/>
+              <br/>
+              <h1 className="member-name">{this.props.users[id].first_name}</h1>
             </li>
           ))}
         </ul>
@@ -53,23 +55,29 @@ class GroupDetail extends React.Component {
             {this.props.group.image_url}
           </div>
 
-          <div className="group-details">
-            {this.props.group.title}
-            <br/>
-            Owner: {this.props.group.owner.first_name}
-            <br/>
-            Description: {this.props.group.description}
-            <br/>
-            Location: {this.props.group.location}
-          </div>
-
-          <div className="group-members">
-            Members:
-            {this.renderMembers()}
-          </div>
-
-          <div>
+          <div className="group-nav">
             {this.membershipButton()}
+          </div>
+
+          <div className="group-container">
+            <div className="group-details">
+              {this.props.group.title}
+              <br/>
+              Owner: {this.props.group.owner.first_name}
+              <br/>
+              Description: {this.props.group.description}
+              <br/>
+              Location: {this.props.group.location}
+            </div>
+
+            <div className="group-events">
+              events
+            </div>
+
+            <div className="group-members">
+              Members:
+              {this.renderMembers()}
+            </div>
           </div>
         </div>
       );

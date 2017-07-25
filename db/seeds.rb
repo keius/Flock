@@ -116,7 +116,8 @@ daenerys = User.create({
 tyrion = User.create({
   username: "tyrion", password: "123456",
   first_name: "Tyrion", last_name: "Lannister",
-  location: "King's Landing", about: "Everything is better with wine in the belly."
+  location: "King's Landing", about: "Everything is better with wine in the belly.",
+  image_url: "tyrion"
   })
 
 leia = User.create({

@@ -1,0 +1,52 @@
+.group-container {
+  display: flex;
+
+  .group-details {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: 20px;
+    background-color: lightgrey;
+  }
+
+  .group-events {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 20px;
+    background-color: lightgrey;
+  }
+  .group-members {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: 20px;
+    background-color: lightgrey;
+
+    .member-list {
+      .member-profile {
+        .member-img {
+          width: 100px;
+          height: 100px;
+        }
+        .member-name {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.group-banner {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 100px;
+  background-color: lightgrey;
+}
+
+.group-nav {
+  display: flex;
+  margin: 40px;
+  justify-content: center;
+}
