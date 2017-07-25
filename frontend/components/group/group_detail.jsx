@@ -9,6 +9,7 @@ class GroupDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchGroup(this.props.match.params.id);
     this.props.fetchGroupUsers(this.props.match.params.id);
   }
@@ -37,8 +38,7 @@ class GroupDetail extends React.Component {
         <ul className="member-list">
           {Object.keys(this.props.users).map(id => (
             <li className="member-profile" key={`member-${id}`}>
-              <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/v1500965480/user/${this.props.users[id].image_url}`}/>
-              <br/>
+              <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.users[id].image_url}.png`}/>
               <h1 className="member-name">{this.props.users[id].first_name}</h1>
             </li>
           ))}
@@ -52,7 +52,7 @@ class GroupDetail extends React.Component {
       return (
         <div className="group-background">
           <div className="group-banner">
-            {this.props.group.image_url}
+            <img src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965483/group/${this.props.group.image_url}`}/>
           </div>
 
           <div className="group-nav">
@@ -75,7 +75,8 @@ class GroupDetail extends React.Component {
             </div>
 
             <div className="group-members">
-              Members:
+              <h1>Members</h1>
+              <br/>
               {this.renderMembers()}
             </div>
           </div>

@@ -8,6 +8,8 @@ class ProfileDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    this.props.fetchUser(this.props.user.id);
     this.props.fetchUserGroups(this.props.currentUser.id);
   }
 

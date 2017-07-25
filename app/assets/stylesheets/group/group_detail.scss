@@ -1,11 +1,15 @@
 .group-container {
   display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 
   .group-details {
     display: flex;
     justify-content: center;
     width: 25%;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 40px;
     background-color: lightgrey;
   }
 
@@ -13,21 +17,38 @@
     display: flex;
     justify-content: center;
     width: 50%;
-    margin: 20px;
+    padding: 40px;
     background-color: lightgrey;
   }
   .group-members {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 25%;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 40px;
     background-color: lightgrey;
+    text-align: center;
+
+    h1 {
+      display: flex;
+      font-size: 40px;
+    }
 
     .member-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .member-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
         .member-img {
           width: 100px;
           height: 100px;
+          background-color: lightgrey;
         }
         .member-name {
           font-size: 20px;
@@ -41,12 +62,15 @@
   display: flex;
   justify-content: center;
   margin: 20px;
-  padding: 100px;
   background-color: lightgrey;
+  img {
+    height: 300px;
+    width: auto;
+  }
 }
 
 .group-nav {
   display: flex;
-  margin: 40px;
+  margin: 20px;
   justify-content: center;
 }
