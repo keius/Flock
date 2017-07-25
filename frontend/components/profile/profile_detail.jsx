@@ -9,8 +9,8 @@ class ProfileDetail extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchUser(this.props.user.id);
-    this.props.fetchUserGroups(this.props.currentUser.id);
+    this.props.fetchUser(this.props.match.params.id);
+    this.props.fetchUserGroups(this.props.match.params.id);
   }
 
   renderGroups() {
@@ -29,6 +29,9 @@ class ProfileDetail extends React.Component {
   }
 
   render() {
+    if (!this.props.user) {
+      return null;
+    }
     return (
       <div className="profile-background">
 
@@ -38,20 +41,20 @@ class ProfileDetail extends React.Component {
 
         <section className="profile-info">
           <div className="profile">
-            <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.currentUser.image_url}`}/>
+            <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.user.image_url}`}/>
             <br/>
-            <h1 className="profile-name">{this.props.currentUser.first_name}&nbsp;{this.props.currentUser.last_name}</h1>
+            <h1 className="profile-name">{this.props.user.first_name}&nbsp;{this.props.user.last_name}</h1>
           </div>
           <ul className="profile-bio">
             <li className="profile-location">
               Location:
               <br/>
-              {this.props.currentUser.location}
+              {this.props.user.location}
             </li>
             <li className="profile-about">
               About:
               <br/>
-              {this.props.currentUser.about}
+              {this.props.user.about}
             </li>
           </ul>
         </section>

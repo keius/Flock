@@ -8,17 +8,17 @@ const authLinks = () => (
   </div>
 );
 
-const greetLinks = (currentUser, logout) => (
+const greetLinks = (currentUser, logout, history) => (
   <div className="authNav">
     <h3 className="button">Welcome, {currentUser.first_name}!</h3>
-    <button className="button" onClick={logout}>Log Out</button>
+    <button className="button" onClick={() => logout().then(() => history.push('/'))}>Log Out</button>
   </div>
 );
 
-const MainNav = ({currentUser, logout}) => {
+const MainNav = ({currentUser, logout, history}) => {
   const main = () => (
     currentUser ?
-    greetLinks(currentUser, logout): authLinks()
+    greetLinks(currentUser, logout, history): authLinks()
   );
   return (
     <div className="mainNav">

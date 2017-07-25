@@ -1,3 +1,5 @@
+@import 'variables';
+
 .group-container {
   display: flex;
   justify-content: space-around;
@@ -62,7 +64,10 @@
   display: flex;
   justify-content: center;
   margin: 20px;
-  background-color: lightgrey;
+  padding: 100px;
+  font-size: 50px;
+  color: white;
+  background-color: $flock-indigo;
   img {
     height: 300px;
     width: auto;

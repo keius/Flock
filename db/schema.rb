@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721002150) do
+ActiveRecord::Schema.define(version: 20170725205715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "group_id",    null: false
+    t.integer  "host_id",     null: false
+    t.string   "title",       null: false
+    t.datetime "datetime",    null: false
+    t.string   "location",    null: false
+    t.text     "description"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["group_id", "host_id"], name: "index_events_on_group_id_and_host_id", unique: true, using: :btree
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "owner_id",    null: false
