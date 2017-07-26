@@ -404,3 +404,12 @@ Group.all.each do |group|
   end
   Membership.create({user_id: group.owner_id, group_id: group.id})
 end
+
+
+
+
+
+#EVENTS
+Event.destroy_all
+
+Event.create("Javascript Tutorial")

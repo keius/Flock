@@ -5,7 +5,6 @@ class Api::GroupsController < ApplicationController
     @group.owner_id = current_user.id
     if @group.save
       Membership.create({user_id: @group.owner_id, group_id: @group.id})
-      @user = current_user
       render :show
     else
       render json: @group.errors.full_messages, status: 422
@@ -43,6 +42,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:user_id, :title, :description, :location, :image_url)
+    params.require(:group).permit(:user_id, :title, :category, :description, :location, :image_url)
   end
 end
