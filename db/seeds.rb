@@ -411,5 +411,3 @@ end
 
 #EVENTS
 Event.destroy_all
-
-Event.create("Javascript Tutorial")
