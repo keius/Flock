@@ -56,32 +56,43 @@ class GroupDetail extends React.Component {
   render() {
     if (this.props.group) {
       return (
-        <div className="group-background">
-          <div className="group-banner">
-            {this.props.group.title}
-          </div>
-
-          <div className="group-nav">
-            {this.membershipButton()}
-          </div>
-
-          <div className="group-container">
-            <div className="group-details">
-              <h1>Owner: {this.props.group.owner.first_name}</h1>
-              <br/>
-              <h1></h1>Description: {this.props.group.description}
-              <br/>
-              Location: {this.props.group.location}
+        <div className="group">
+          <div className="group-background">
+            <div className="group-banner">
+              {this.props.group.title}
             </div>
 
-            <div className="group-events">
-              events
+            <div className="group-nav">
+              {this.membershipButton()}
             </div>
 
-            <div className="group-members">
-              <h1>Members</h1>
-              <br/>
-              {this.renderMembers()}
+            <div className="group-container">
+              <div className="group-details">
+                <h1>Description:
+                  <p>{this.props.group.description}</p>
+                </h1>
+                <br/>
+                <h1>Location:
+                  <p>{this.props.group.location}</p>
+                </h1>
+                <br/>
+                <h1>Owner:
+                  <Link className="owner-profile" to={`/profiles/${this.props.group.owner.id}`}>
+                    <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.group.owner.image_url}.png`}/>
+                    <h1 className="member-name">{this.props.group.owner.first_name}</h1>
+                  </Link>
+                </h1>
+              </div>
+
+              <div className="group-events">
+                events
+              </div>
+
+              <div className="group-members">
+                <h1>Members</h1>
+                <br/>
+                {this.renderMembers()}
+              </div>
             </div>
           </div>
         </div>

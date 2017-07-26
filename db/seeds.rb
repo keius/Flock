@@ -398,8 +398,8 @@ italian_hagrid = Group.create({
 Membership.destroy_all
 
 Group.all.each do |group|
-  num_members = rand(9) + 3
-  User.all.shuffle[0..num_members].each do |new_member|
+  num_members = rand(5) + 3
+  User.all.shuffle[0...num_members].each do |new_member|
     Membership.create({user_id: new_member.id, group_id: group.id})
   end
   Membership.create({user_id: group.owner_id, group_id: group.id})

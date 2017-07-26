@@ -33,7 +33,7 @@ class ProfileDetail extends React.Component {
     }
     return (
       <div className="profile-background">
-        
+
         <section className="profile-info">
           <div className="profile">
             <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.user.image_url}`}/>
@@ -42,14 +42,12 @@ class ProfileDetail extends React.Component {
           </div>
           <ul className="profile-bio">
             <li className="profile-location">
-              Location:
-              <br/>
-              {this.props.user.location}
+              <h1>Location:</h1>
+              <p>{this.props.user.location}</p>
             </li>
             <li className="profile-about">
-              About:
-              <br/>
-              {this.props.user.about}
+              <h1>About:</h1>
+              <p>{this.props.user.about}</p>
             </li>
           </ul>
         </section>
