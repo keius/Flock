@@ -39,3 +39,16 @@
   }
   color: black;
 }
+
+.group-form-button {
+  margin-top: 40px;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: $flock-blue;
+  transition: filter 0.2s ease;
+  &:hover{
+    background-color: $flock-indigo;
+  }
+  color: white;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import GroupFormModal from '../modal/group_form_modal';
 
 class ProfileDetail extends React.Component {
   constructor(props) {
@@ -28,25 +27,13 @@ class ProfileDetail extends React.Component {
     );
   }
 
-  renderNav() {
-    if (this.props.currentUser) {
-      return (<GroupFormModal/>);
-    } else {
-      return null;
-    }
-  }
-
   render() {
     if (!this.props.user) {
       return null;
     }
     return (
       <div className="profile-background">
-
-        <nav className="profile-nav">
-          {this.renderNav()}
-        </nav>
-
+        
         <section className="profile-info">
           <div className="profile">
             <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.user.image_url}`}/>

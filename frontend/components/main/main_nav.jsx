@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import GroupFormModal from '../modal/group_form_modal';
 
 const authLinks = () => (
   <div className="authNav">
@@ -22,7 +23,7 @@ const MainNav = ({currentUser, logout, history}) => {
   );
   return (
     <div className="mainNav">
-      <div className="searchNav">Search</div>
+      <div className="groupNav">{<GroupFormModal/>}</div>
       <Link to='/' className="homeNav">
         <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/main/logo.png'/>
       </Link>

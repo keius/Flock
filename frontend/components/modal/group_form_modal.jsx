@@ -13,14 +13,11 @@ const style = {
     zIndex          : 10
   },
   content : {
-    width : 'auto',
-    height: '400',
-    margin: 'auto',
     position        : 'fixed',
     top             : '100px',
-    left            : '100px',
-    right           : '100px',
-    bottom          : '100px',
+    left            : '400px',
+    right           : '400px',
+    bottom          : '340px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11

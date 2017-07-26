@@ -1,5 +1,9 @@
 @import 'variables';
 
+.group-background {
+  margin-top: 100px;
+}
+
 .group-container {
   display: flex;
   justify-content: space-around;
@@ -33,11 +37,6 @@
     background-color: lightgrey;
     text-align: center;
 
-    h1 {
-      display: flex;
-      font-size: 40px;
-    }
-
     .member-list {
       display: flex;
       flex-direction: column;
@@ -47,6 +46,10 @@
         flex-direction: column;
         align-items: center;
         margin: 5px;
+        transition: filter 0.2s ease;
+        &:hover{
+          background-color: $flock-yellow;
+        }
         .member-img {
           width: 100px;
           height: 100px;
