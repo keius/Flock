@@ -397,10 +397,6 @@ italian_hagrid = Group.create({
 # MEMBERSHIPS
 Membership.destroy_all
 
-[ruby_rails, christmas_hogsmeade, hikers_mordor, stay_home_dads, ultimate_wealth_builders, omg_food].each do |group|
-  Membership.create({user_id: guest.id, group_id: group.id})
-end
-
 Group.all.each do |group|
   num_members = rand(9) + 3
   User.all.shuffle[0..num_members].each do |new_member|

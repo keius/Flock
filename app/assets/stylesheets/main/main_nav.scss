@@ -1,7 +1,7 @@
 @import 'variables';
 
 .mainNav {
-  padding: 20px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,19 @@
     }
   }
 
-  .button {
+  .button1 {
+    padding: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: $flock-sky;
+    transition: filter 0.2s ease;
+    &:hover{
+      background-color: $flock-indigo;
+    }
+    color: white;
+  }
+
+  .button2 {
     padding: 20px;
     font-size: 15px;
     text-decoration: none;

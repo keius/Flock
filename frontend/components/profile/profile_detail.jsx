@@ -28,6 +28,14 @@ class ProfileDetail extends React.Component {
     );
   }
 
+  renderNav() {
+    if (this.props.currentUser) {
+      return (<GroupFormModal/>);
+    } else {
+      return null;
+    }
+  }
+
   render() {
     if (!this.props.user) {
       return null;
@@ -36,7 +44,7 @@ class ProfileDetail extends React.Component {
       <div className="profile-background">
 
         <nav className="profile-nav">
-          <GroupFormModal/>
+          {this.renderNav()}
         </nav>
 
         <section className="profile-info">

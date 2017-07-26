@@ -3,15 +3,15 @@ import {Link} from 'react-router-dom';
 
 const authLinks = () => (
   <div className="authNav">
-    <Link to="/login" className="button">Log In</Link>
-    <Link to="/signup" className="button">Sign Up</Link>
+    <Link to="/login" className="button1">Log In</Link>
+    <Link to="/signup" className="button2">Sign Up</Link>
   </div>
 );
 
 const greetLinks = (currentUser, logout, history) => (
   <div className="authNav">
-    <h3 className="button">Welcome, {currentUser.first_name}!</h3>
-    <button className="button" onClick={() => logout().then(() => history.push('/'))}>Log Out</button>
+    <h3 className="button1">Welcome, {currentUser.first_name}!</h3>
+    <button className="button2" onClick={() => logout().then(() => history.push('/'))}>Log Out</button>
   </div>
 );
 

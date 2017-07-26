@@ -64,14 +64,10 @@
   display: flex;
   justify-content: center;
   margin: 20px;
-  padding: 100px;
+  padding: 50px;
   font-size: 50px;
   color: white;
   background-color: $flock-indigo;
-  img {
-    height: 300px;
-    width: auto;
-  }
 }
 
 .group-nav {
