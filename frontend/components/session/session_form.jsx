@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-main">
+      <div className="session-background">
         <form onSubmit={this.handleSubmit} className="session-form-container">
           Welcome to Flock!
           <br/>

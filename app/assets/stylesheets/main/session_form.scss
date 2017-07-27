@@ -1,10 +1,14 @@
 @import 'variables';
 
-.session-main {
-  padding: 100px;
+.session-background {
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
+
+  padding-top: 200px;
+  padding-bottom: 500px;
+
+  background-size: cover;
+  background-color: $flock-grey;
 }
 .session-form-container {
   padding: 50px;
@@ -12,7 +16,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   border: 5px solid gray;
+  background-color: white;
 }
 
 .session-form {
@@ -34,7 +40,14 @@
 
 .session-input {
   margin-left: 10px;
+  width: 100px;
+  text-align: center;
+
+  font-size: 15px;
+  color: $flock-blue;
+
   background-color: white;
+  border-bottom: 1px solid $flock-blue;
 }
 
 .session-button {
@@ -47,7 +60,7 @@
   background-color: $flock-blue;
   transition: filter 0.2s ease;
   &:hover{
-    background-color: $flock-blue;
+    background-color: $flock-grey;
   }
   color: white;
 }
@@ -62,7 +75,7 @@
   background-color: $flock-peach;
   transition: filter 0.2s ease;
   &:hover{
-    background-color: $flock-red;
+    background-color: $flock-orange;
   }
-  color: black;
+  color: white;
 }

@@ -3,35 +3,55 @@
 .mainBanner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 350px;
-  padding: 150px;
-  background: url('http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/main/banner.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: black;
 
-  .mainText2 {
-    display: flex;
-    text-align: center;
-    color: white;
-  }
+  background: url(http://res.cloudinary.com/dvylj9hyw/image/upload/b_black,o_40/v1501170433/banner.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   .mainText {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 350px;
+
     font-size: 40px;
     text-align: center;
+
     color: white;
   }
 
-  .button {
-    padding: 20px;
+  .categories {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    background-color: white;
+  }
+
+  .footer {
+    display: flex;
+
+    margin-top: 200px;
+    width: 100%;
+    height: 600px;
+    background-color: white;
+  }
+
+  .banner-button {
+    padding: 15px;
+    margin-top: 30px;
+    width: 150px;
+    border-radius: 5px;
+
+    font-size: 15px;
     text-decoration: none;
     background-color: $flock-blue;
     transition: filter 0.2s ease;
     &:hover{
-      background-color: $flock-blue;
+      background-color: $flock-grey;
     }
     color: white;
   }

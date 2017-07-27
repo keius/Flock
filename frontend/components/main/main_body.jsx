@@ -6,15 +6,21 @@ const MainBody = ({currentUser, logout}) => {
   return (
     <div className="mainBanner">
       <div className="mainText">
-        What do you love?
-      </div>
-      <div className="mainText2">
-        Do more of it with Flock.
+        <p>What do you love?</p>
+        <p>Do more of it with Flock.</p>
+        <Link className="banner-button" to='/signup'>
+          Sign Up
+        </Link>
       </div>
 
-      <Link className="button" to='/signup'>
-        Sign Up
-      </Link>
+
+      <div className="categories">
+        CATEGORIES
+      </div>
+
+      <div className="footer">
+        FOOTER
+      </div>
 
     </div>
   );

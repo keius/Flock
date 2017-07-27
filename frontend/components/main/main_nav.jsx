@@ -4,7 +4,7 @@ import GroupFormModal from '../modal/group_form_modal';
 
 const authLinks = () => (
   <div className="authNav">
-    <Link to="/login" className="button1">Log In</Link>
+    <Link to="/login" className="button1">LOG IN</Link>
     <Link to="/signup" className="button2">SIGN UP</Link>
   </div>
 );
@@ -12,7 +12,7 @@ const authLinks = () => (
 const greetLinks = (currentUser, logout, history) => (
   <div className="authNav">
     <Link to={'/profile'} className="button1">Welcome, {currentUser.first_name}!</Link>
-    <button className="button2" onClick={() => logout().then(() => history.push('/'))}>Log Out</button>
+    <button className="button2" onClick={() => logout().then(() => history.push('/'))}>LOG OUT</button>
   </div>
 );
 
@@ -22,13 +22,16 @@ const MainNav = ({currentUser, logout, history}) => {
     greetLinks(currentUser, logout, history): authLinks()
   );
   return (
-    <div className="mainNav">
-      <div className="groupNav">{<GroupFormModal/>}</div>
-      <Link to='/' className="homeNav">
-        <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/main/logo.png'/>
-      </Link>
-      {main()}
-    </div>
+    <nav>
+      <div className="nav-background"></div>
+      <div className="mainNav">
+        <div className="groupNav">{<GroupFormModal/>}</div>
+        <Link to='/' className="homeNav">
+          <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/main/logo_1.png'/>
+        </Link>
+        {main()}
+      </div>
+    </nav>
   );
 };
 

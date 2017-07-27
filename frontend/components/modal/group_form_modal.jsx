@@ -50,7 +50,7 @@ class GroupFormModal extends React.Component {
   render() {
     return(
       <div>
-        <button className="button" onClick={this.openModal}>Create Group</button>
+        <button className="group-form-button" onClick={this.openModal}>Create Group</button>
 
         <Modal
           isOpen={this.state.modalOpen}

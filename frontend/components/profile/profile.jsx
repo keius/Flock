@@ -20,7 +20,7 @@ class Profile extends React.Component {
             <li className="group" key={`group-${group.id}`}>
               <Link className="group-link" to={`/groups/${group.id}`}>
                 <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${group.image_url}`}/>
-                {group.title}
+                <p className="group-text">{group.title}</p>
               </Link>
             </li>
           ))}
@@ -51,16 +51,16 @@ class Profile extends React.Component {
       return null;
     }
     return (
-      <div className="profile">
-        <div className="profile-background">
+      <div className="profile-background">
+        <div className="profile-container">
           <section className="profile-group-list">
-            <div className="profile-groups-header">Groups</div>
+            <div className="profile-group-header">Groups</div>
             <br/>
             {this.renderGroups()}
           </section>
 
           <section className="profile-event-list">
-            <p className="profile-events-header">Events</p>
+            <p className="profile-event-header">Events</p>
             {this.renderEvents()}
           </section>
         </div>
