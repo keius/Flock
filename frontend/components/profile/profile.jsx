@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import * as Util from '../../util/util';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -37,8 +38,9 @@ class Profile extends React.Component {
             return (
               <li key={`event-${event.id}`}>
                 <Link className="event-detail" to={`/events/${event.id}`}>
+                  <h1 className="event-datetime">{Util.processDate(event.datetime)} PM</h1>
+                  <br/>
                   <h1 className="event-name">{event.title}</h1>
-                  <h1 className="event-datetime">{event.datetime}</h1>
                 </Link>
               </li>
             );
@@ -57,13 +59,21 @@ class Profile extends React.Component {
       <div className="profile-background">
         <div className="profile-container">
           <section className="profile-group-list">
-            <div className="profile-group-header">Groups</div>
+            <div className="profile-group-header">
+              <i className="fa fa-users" aria-hidden="true"></i>
+              &nbsp;&nbsp;
+              Groups
+            </div>
             <br/>
             {this.renderGroups()}
           </section>
 
           <section className="profile-event-list">
-            <p className="profile-event-header">Events</p>
+            <p className="profile-event-header">
+              <i className="fa fa-calendar" aria-hidden="true"></i>
+              &nbsp;&nbsp;
+              Events
+            </p>
             {this.renderEvents()}
           </section>
         </div>

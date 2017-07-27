@@ -45,11 +45,13 @@ class GroupDetail extends React.Component {
   }
 
   deleteButton() {
-    if (this.props.group.owner.id === this.props.currentUser.id) {
-      return <button className="group-button" onClick={this.handleDelete}>
-        Delete Group</button>;
-    } else {
-      return null;
+    if (this.props.currentUser){
+      if (this.props.group.owner.id === this.props.currentUser.id) {
+        return <button className="group-button" onClick={this.handleDelete}>
+          Delete Group</button>;
+        } else {
+          return null;
+        }
     }
   }
 
