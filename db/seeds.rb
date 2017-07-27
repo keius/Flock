@@ -443,10 +443,10 @@ women_networking = Event.create({
 })
 
 Event.all.each do |event|
-  month = rand(3) + 4
-  day = rand(29) + 1
-  hour = rand(9) + 1
-  event.datetime = DateTime.new(2021, month, day, hour)
+  num = rand(30)
+  random_datetime = num.day.from_now.beginning_of_hour.localtime + num.hour
+  event.datetime = random_datetime
+  event.save
 end
 
 
