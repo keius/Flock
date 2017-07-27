@@ -18,7 +18,7 @@ class Profile extends React.Component {
       return(
         <ul className="profile-groups">
           {this.props.groups.map(group => (
-            <li className="group" key={`group-${group.id}`}>
+            <li className="group-item" key={`group-${group.id}`}>
               <Link className="group-link" to={`/groups/${group.id}`}>
                 <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${group.image_url}`}/>
                 <p className="group-text">{group.title}</p>

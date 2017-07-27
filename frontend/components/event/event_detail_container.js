@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchEvent} from '../../actions/event_actions';
+import {fetchEvent, deleteEvent} from '../../actions/event_actions';
 import {fetchEventUsers, joinEvent, leaveEvent} from '../../actions/user_actions';
 import EventDetail from './event_detail';
 
@@ -12,6 +12,7 @@ const mapStateToProps = ({session, events, users}, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   fetchEvent: id => dispatch(fetchEvent(id)),
   fetchEventUsers: id => dispatch(fetchEventUsers(id)),
+  deleteEvent: id => dispatch(deleteEvent(id)),
   joinEvent: eventId => dispatch(joinEvent(eventId)),
   leaveEvent: eventId => dispatch(leaveEvent(eventId))
 });

@@ -35,9 +35,13 @@ class GroupDetail extends React.Component {
   membershipButton() {
     if (this.props.currentUser) {
       if (this.props.users[this.props.currentUser.id]) {
-        return <button className="group-button" onClick={this.handleLeave}>Leave Group</button>;
+        return <button className="group-button" onClick={this.handleLeave}>
+          <i className="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Leave Group
+        </button>;
         } else {
-          return <button className="group-button" onClick={this.handleJoin}>Join Group</button>;
+          return <button className="group-button" onClick={this.handleJoin}>
+            <i className="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;Join Group
+          </button>;
       }
     } else {
       return null;

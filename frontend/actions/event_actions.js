@@ -14,9 +14,9 @@ export const receiveEvent = event => ({
   event,
 });
 
-export const removeEvent = event => ({
+export const removeEvent = id => ({
   type: REMOVE_EVENT,
-  event
+  id
 });
 
 //THUNK
@@ -45,5 +45,5 @@ export const updateEvent = event => dispatch => (
 );
 
 export const deleteEvent = id => dispatch => (
-  APIUtil.deleteEvent(id).then(event => removeEvent(event))
+  APIUtil.deleteEvent(id).then(() => removeEvent(id))
 );

@@ -3,7 +3,7 @@
 .profile-background {
   display: flex;
   justify-content: center;
-  background-color: $flock-grey;
+  background: url(http://res.cloudinary.com/dvylj9hyw/image/upload/v1501194953/group_banner.jpg);
 }
 .profile-container {
   display: flex;
@@ -35,6 +35,10 @@
       text-align: center;
       margin-top: 30px;
 
+      .group-item {
+        display: flex;
+        justify-content: center;
+      }
       .group-link {
         margin: 10px;
         padding: 10px;

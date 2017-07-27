@@ -6,6 +6,7 @@ class EventDetail extends React.Component {
     super(props);
     this.handleJoin = this.handleJoin.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,12 @@ class EventDetail extends React.Component {
     this.props.leaveEvent(this.props.event.id);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteEvent(this.props.event.id)
+    .then(() => this.props.history.push('/profile'));
+  }
+
   rsvpButton() {
     if (this.props.currentUser) {
       if (this.props.users[this.props.currentUser.id]) {
@@ -33,6 +40,17 @@ class EventDetail extends React.Component {
       }
     } else {
       return null;
+    }
+  }
+
+  deleteButton() {
+    if (this.props.currentUser){
+      if (this.props.event.host.id === this.props.currentUser.id) {
+        return <button className="event-button" onClick={this.handleDelete}>
+          Delete Event</button>;
+        } else {
+          return null;
+        }
     }
   }
 
@@ -64,6 +82,7 @@ class EventDetail extends React.Component {
 
             <div className="event-nav">
               {this.rsvpButton()}
+              {this.deleteButton()}
             </div>
 
             <div className="event-container">
