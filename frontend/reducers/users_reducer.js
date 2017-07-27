@@ -11,7 +11,7 @@ const usersReducer = (state = _default, action) => {
   switch (action.type) {
     case RECEIVE_USERS:
       const users = action.users;
-      return merge({}, state, {users});
+      return Object.assign({}, state, {users});
     case RECEIVE_USER:
       const user = action.user;
       return merge({}, state, {users: {[user.id]: user}});

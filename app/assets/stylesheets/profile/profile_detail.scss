@@ -1,13 +1,13 @@
 @import 'variables';
 
-.profile-background {
+.user-background {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.profile-info {
+.user-info {
   display: flex;
   justify-content: space-around;
   width: 50%;
@@ -17,18 +17,18 @@
   background-color: $flock-indigo;
   color: white;
 
-  .profile {
+  .user {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    .profile-img {
+    .user-img {
       display: flex;
       width: 200px;
       height: auto;
     }
 
-    .profile-name{
+    .user-name{
       display:flex;
       font-size: 30px;
     }
@@ -36,12 +36,12 @@
 
   }
 
-  .profile-bio {
+  .user-bio {
     width: 50%;
     text-align: center;
     font-size: 30px;
 
-    .profile-location {
+    .user-location {
       display: flex;
       flex-direction: column;
       margin: 20px;
@@ -49,7 +49,7 @@
       color: white;
     }
 
-    .profile-about {
+    .user-about {
       display: flex;
       flex-direction: column;
       margin: 20px;
@@ -69,13 +69,13 @@
   }
 }
 
-.profile-groups-header {
+.user-groups-header {
   display: flex;
   font-size: 40px;
   justify-content: center;
 }
 
-.profile-group-list {
+.user-group-list {
   margin: 20px;
   padding: 50px;
   width: 50%;
@@ -100,7 +100,7 @@
   }
 }
 
-.profile-nav {
+.user-nav {
   display: flex;
   margin: 40px;
   justify-content: center;

@@ -9,10 +9,9 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveGroup = (group, user) => ({
+export const receiveGroup = (group) => ({
   type: RECEIVE_GROUP,
-  group,
-  user
+  group
 });
 
 export const removeGroup = group => ({
@@ -42,5 +41,5 @@ export const updateGroup = (group) => dispatch => (
 );
 
 export const deleteGroup = (id) => dispatch => (
-  APIUtil.deleteGroup(id).then(() => dispatch(fetchGroups()))
+  APIUtil.deleteGroup(id).then(group => dispatch(removeGroup(group)))
 );

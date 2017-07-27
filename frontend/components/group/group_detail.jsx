@@ -11,6 +11,7 @@ class GroupDetail extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchGroup(this.props.match.params.id);
+    this.props.fetchGroupEvents(this.props.match.params.id);
     this.props.fetchGroupUsers(this.props.match.params.id);
   }
 
@@ -42,9 +43,25 @@ class GroupDetail extends React.Component {
         <ul className="member-list">
           {Object.keys(this.props.users).map(id => (
             <li key={`member-${id}`}>
-              <Link className="member-profile" to={`/profiles/${id}`}>
+              <Link className="member-profile" to={`/users/${id}`}>
                 <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.users[id].image_url}.png`}/>
                 <h1 className="member-name">{this.props.users[id].first_name}</h1>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
+  renderEvents() {
+    if (this.props.events) {
+      return(
+        <ul className="group-events-list">
+          {Object.keys(this.props.events).map(id => (
+            <li key={`event-${id}`}>
+              <Link className="event-detail" to={`/events/${id}`}>
+                <h1 className="event-name">{this.props.events[id].title}</h1>
               </Link>
             </li>
           ))}
@@ -77,7 +94,7 @@ class GroupDetail extends React.Component {
                 </h1>
                 <br/>
                 <h1>Owner:
-                  <Link className="owner-profile" to={`/profiles/${this.props.group.owner.id}`}>
+                  <Link className="owner-profile" to={`/users/${this.props.group.owner.id}`}>
                     <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.group.owner.image_url}.png`}/>
                     <h1 className="member-name">{this.props.group.owner.first_name}</h1>
                   </Link>
@@ -85,7 +102,9 @@ class GroupDetail extends React.Component {
               </div>
 
               <div className="group-events">
-                events
+                <h1>Events</h1>
+                <br/>
+                {this.renderEvents()}
               </div>
 
               <div className="group-members">

@@ -130,7 +130,7 @@ leia = User.create({
 spongebob = User.create({
   username: "spongebob", password: "123456",
   first_name: "Spongebob", last_name: "Squarepants",
-  location: "Alderaan", about: "I'm ready!",
+  location: "Bikini Bottom", about: "I'm ready!",
   image_url: "spongebob"
   })
 
@@ -149,7 +149,7 @@ hogwarts_js = Group.create({
   })
 
 kings_bitcoin = Group.create({
-  owner_id: tyrion.id, category: "tech", title: "Hogwarts Javascript Meetup",
+  owner_id: tyrion.id, category: "tech", title: "King's Landing BitCoin Meetup",
   description: "Farming money for drinks",
   location: "King's Landing", image_url: "kings_bitcoin"
   })
@@ -411,3 +411,55 @@ end
 
 #EVENTS
 Event.destroy_all
+
+js_tutorial = Event.create({
+  group_id: hogwarts_js.id, title: "Javascript Tutorial", host_id: hogwarts_js.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "For beginners", image_url: "js_tutorial"
+})
+
+frameworks_workshop = Event.create({
+  group_id: hogwarts_js.id, title: "Frameworks Workshop", host_id: hogwarts_js.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "Node.js among other things", image_url: "frameworks_workshop"
+})
+
+intro_bitcoin = Event.create({
+  group_id: kings_bitcoin.id, title: "An Introduction to BitCoin", host_id: kings_bitcoin.owner.id,
+  location: "Dubrovnik, Croatia", description: "The magical world of virtual money", image_url: "intro_bitcoin"
+})
+
+calling_bitcoin = Event.create({
+  group_id: kings_bitcoin.id, title: "Calling All BitCoiners", host_id: kings_bitcoin.owner.id,
+  location: "Dubrovnik, Croatia", description: "Share your experience!", image_url: "calling_bitcoin"
+})
+
+women_first = Event.create({
+  group_id: women_who_code.id, title: "First Meeting", host_id: women_who_code.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "Join us!", image_url: "women_first"
+})
+
+women_networking = Event.create({
+  group_id: women_who_code.id, title: "Networking with Women in Business", host_id: women_who_code.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "Meet powerful women", image_url: "women_networking"
+})
+
+Event.all.each do |event|
+  month = rand(3) + 4
+  day = rand(29) + 1
+  hour = rand(9) + 1
+  event.datetime = DateTime.new(2021, month, day, hour)
+end
+
+
+
+
+
+#RSVPS
+Rsvp.destroy_all
+
+Event.all.each do |event|
+  num_rsvps = rand(5) + 3
+  User.all.shuffle[0...num_rsvps].each do |new_rsvp|
+    Rsvp.create({user_id: new_rsvp.id, event_id: event.id})
+  end
+  Rsvp.create({user_id: event.host_id, event_id: event.id})
+end

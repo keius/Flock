@@ -16,9 +16,14 @@ class User < ActiveRecord::Base
 
   has_many :rsvps
 
-  has_many :events,
+  has_many :attending_events,
     through: :rsvps,
     source: :event
+
+  has_many :events,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Event
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

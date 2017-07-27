@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {fetchUser, editUser} from '../../actions/user_actions';
 import {fetchUserGroups} from '../../actions/group_actions';
-import ProfileDetail from './profile_detail';
+import UserDetail from './user_detail';
 
 const mapStateToProps = ({groups, users}, ownProps) => ({
   user: users.users[ownProps.match.params.id],
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   editUser: (user) => dispatch(editUser(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);

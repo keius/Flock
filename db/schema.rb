@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(version: 20170726162043) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "group_id",    null: false
-    t.integer  "host_id",     null: false
+    t.integer  "host_id"
     t.string   "title",       null: false
-    t.datetime "datetime",    null: false
+    t.datetime "datetime"
     t.string   "location",    null: false
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["group_id", "host_id"], name: "index_events_on_group_id_and_host_id", unique: true, using: :btree
+    t.index ["group_id", "host_id"], name: "index_events_on_group_id_and_host_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|

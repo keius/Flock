@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :memberships, only: [:create]
       delete '/memberships', to: 'memberships#destroy'
     end
+    resources :events, only: [:index, :create, :update, :show, :destroy] do
+      resources :rsvps, only: [:create]
+      delete 'rsvps', to: 'rsvps#destroy'
+    end
   end
 
   root "static_pages#root"

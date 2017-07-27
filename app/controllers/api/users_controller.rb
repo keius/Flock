@@ -10,8 +10,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = Group.find(params[:group_id]).members
-    render :index
+    if params[:group_id]
+      @users = Group.find(params[:group_id]).members
+    elsif params[:event_id]
+      @users = Event.find(params[:event_id]).users
+    end
   end
 
   def show
@@ -29,6 +32,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:group_id, :username, :password, :first_name, :last_name, :location, :about, :image_url)
+    params.require(:user).permit(:group_id, :event_id, :username, :password, :first_name, :last_name, :location, :about, :image_url)
   end
 end

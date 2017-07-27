@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class ProfileDetail extends React.Component {
+class UserDetail extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -32,29 +32,29 @@ class ProfileDetail extends React.Component {
       return null;
     }
     return (
-      <div className="profile-background">
+      <div className="user-background">
 
-        <section className="profile-info">
-          <div className="profile">
-            <img className="profile-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.user.image_url}`}/>
+        <section className="user-info">
+          <div className="user">
+            <img className="user-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965555/user/${this.props.user.image_url}`}/>
             <br/>
-            <h1 className="profile-name">{this.props.user.first_name}&nbsp;{this.props.user.last_name}</h1>
+            <h1 className="user-name">{this.props.user.first_name}&nbsp;{this.props.user.last_name}</h1>
           </div>
-          <ul className="profile-bio">
-            <li className="profile-location">
+          <ul className="user-bio">
+            <li className="user-location">
               <h1>Location:</h1>
               <p>{this.props.user.location}</p>
             </li>
-            <li className="profile-about">
+            <li className="user-about">
               <h1>About:</h1>
               <p>{this.props.user.about}</p>
             </li>
           </ul>
         </section>
 
-        <p className="profile-groups-header">Groups</p>
+        <p className="user-groups-header">Groups</p>
 
-        <section className="profile-group-list">
+        <section className="user-group-list">
           {this.renderGroups()}
         </section>
       </div>
@@ -62,4 +62,4 @@ class ProfileDetail extends React.Component {
   }
 }
 
-export default ProfileDetail;
+export default UserDetail;

@@ -31,6 +31,12 @@ export const fetchGroupUsers = (id) => dispatch => (
   )
 );
 
+export const fetchEventUsers = (id) => dispatch => (
+  APIUtil.fetchEventUsers(id).then(
+    users => dispatch(receiveUsers(users))
+  )
+);
+
 export const fetchUser = (userId) => dispatch => (
   APIUtil.fetchUser(userId).then(
     user => dispatch(receiveUser(user))
@@ -43,4 +49,12 @@ export const joinGroup = (groupId) => dispatch => (
 
 export const leaveGroup = (groupId) => dispatch => (
   APIUtil.leaveGroup(groupId).then(user => dispatch(removeUser(user)))
+);
+
+export const joinEvent = (eventId) => dispatch => (
+  APIUtil.joinEvent(eventId).then(user => dispatch(receiveUser(user)))
+);
+
+export const leaveEvent = (eventId) => dispatch => (
+  APIUtil.leaveEvent(eventId).then(user => dispatch(removeUser(user)))
 );

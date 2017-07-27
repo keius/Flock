@@ -22,11 +22,11 @@ class Api::EventsController < ApplicationController
 
   def index
     if params[:group_id]
-      Group.find(params[:group_id]).events
+      @events = Group.find(params[:group_id]).events
     elsif params[:user_id]
-      @groups = User.find(params[:user_id]).events
+      @events = User.find(params[:user_id]).attending_events
     else
-      @groups = Event.all
+      @events = Event.all
     end
     render :index
   end
@@ -42,7 +42,7 @@ class Api::EventsController < ApplicationController
   end
 
   private
-  def group_params
+  def event_params
     params.require(:event).permit(:group_id, :user_id, :title, :datetime, :description, :location, :image_url)
   end
 end

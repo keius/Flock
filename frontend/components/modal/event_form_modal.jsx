@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import GroupFormContainer from '../group/group_form_container';
+import EventFormContainer from '../event/event_form_container';
 
 const style = {
   overlay : {
@@ -27,7 +27,7 @@ const style = {
   }
 };
 
-class GroupFormModal extends React.Component {
+class EventFormModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,15 +50,15 @@ class GroupFormModal extends React.Component {
   render() {
     return(
       <div>
-        <button className="button" onClick={this.openModal}>Create Group</button>
+        <button className="button" onClick={this.openModal}>Create Event</button>
 
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           style={style}
-          contentLabel="groupForms">
+          contentLabel="eventForms">
 
-          <GroupFormContainer closeModal={this.closeModal}/>
+          <EventFormContainer closeModal={this.closeModal}/>
 
         </Modal>
       </div>
@@ -66,4 +66,4 @@ class GroupFormModal extends React.Component {
   }
 }
 
-export default GroupFormModal;
+export default EventFormModal;

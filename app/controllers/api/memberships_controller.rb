@@ -1,6 +1,6 @@
 class Api::MembershipsController < ApplicationController
   def create
-    @membership = Membership.new(membership_params)
+    @membership = Membership.new({group_id: params[:group_id]})
     @membership.user_id = current_user.id
     if @membership.save
       @user = User.find(@membership.user_id)
@@ -18,11 +18,5 @@ class Api::MembershipsController < ApplicationController
     else
       render json: ["You are not part of this group!"], status: 404
     end
-  end
-
-  private
-
-  def membership_params
-    params.require(:membership).permit(:user_id, :group_id)
   end
 end

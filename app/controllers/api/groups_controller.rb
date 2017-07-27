@@ -37,7 +37,7 @@ class Api::GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    @user = current_user
+    render :show
   end
 
   private

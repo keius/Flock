@@ -1,24 +1,24 @@
 @import 'variables';
 
-.group {
+.event {
   display: flex;
   justify-content: center;
 }
 
-.group-background {
+.event-background {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin-top: 100px;
 }
 
-.group-container {
+.event-container {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
   margin-bottom: 20px;
 
-  .group-details {
+  .event-details {
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -44,27 +44,14 @@
     }
   }
 
-  .group-events {
+  .event-description {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
     width: 60%;
     padding: 40px;
     background-color: lightgrey;
-
-    .event-detail {
-      display: flex;
-      justify-content: center;
-      margin: 20px;
-      padding: 20px;
-      background-color: $flock-sky;
-    }
-
-    .event-name {
-      font-size: 20px;
-    }
   }
-  .group-members {
+  .event-guests {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -75,11 +62,11 @@
     background-color: lightgrey;
     text-align: center;
 
-    .member-list {
+    .guest-list {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .member-profile {
+      .guest-profile {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -88,11 +75,11 @@
         &:hover{
           background-color: $flock-yellow;
         }
-        .member-img {
+        .guest-img {
           width: 100px;
           height: 100px;
         }
-        .member-name {
+        .guest-name {
           font-size: 20px;
         }
       }
@@ -100,7 +87,7 @@
   }
 }
 
-.group-banner {
+.event-banner {
   display: flex;
   justify-content: center;
   margin: 20px;
@@ -110,7 +97,7 @@
   background-color: $flock-indigo;
 }
 
-.group-nav {
+.event-nav {
   display: flex;
   margin: 20px;
   justify-content: center;
