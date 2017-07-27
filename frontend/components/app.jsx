@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import MainNavContainer from './main/main_nav_container';
 import MainBody from './main/main_body';
+import ProfileContainer from './profile/profile_container';
 import UserDetailContainer from './user/user_detail_container';
 import SessionFormContainer from './session/session_form_container';
 import GroupDetailContainer from './group/group_detail_container';
@@ -18,9 +19,10 @@ const App = () => (
         <AuthRoute exact path='/login' component={SessionFormContainer}/>
         <AuthRoute exact path='/signup' component={SessionFormContainer}/>
         <AuthRoute exact path='/' component={MainBody}/>
-        <Route exact path='/users/:id' component={UserDetailContainer}/>
+        <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
       </Switch>
 
+      <Route exact path='/users/:id' component={UserDetailContainer}/>
       <Route exact path='/groups/:id' component={GroupDetailContainer}/>
       <Route exact path='/events/:id' component={EventDetailContainer}/>
     </div>
