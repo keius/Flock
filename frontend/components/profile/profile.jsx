@@ -50,16 +50,19 @@ class Profile extends React.Component {
       return null;
     }
     return (
-      <div className="profile-background">
-        <p className="profile-groups-header">Groups</p>
-        <section className="profile-group-list">
-          {this.renderGroups()}
-        </section>
+      <div className="profile">
+        <div className="profile-background">
+          <section className="profile-group-list">
+            <div className="profile-groups-header">Groups</div>
+            <br/>
+            {this.renderGroups()}
+          </section>
 
-        <p className="profile-events-header">Events</p>
-        <section className="profile-event-list">
-          {this.renderEvents()}
-        </section>
+          <section className="profile-event-list">
+            <p className="profile-events-header">Events</p>
+            {this.renderEvents()}
+          </section>
+        </div>
       </div>
     );
   }

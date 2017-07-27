@@ -1,0 +1,51 @@
+@import 'variables';
+
+.profile {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+.profile-background {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+
+  .profile-group-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $flock-indigo;
+    color: white;
+    width: 50%;
+
+    .profile-group-header {
+      display: flex;
+    }
+
+    .profile-groups {
+      display: flex;
+      flex-direction: column;
+      flex-flow: row wrap;
+      text-align: center;
+
+      .group-link {
+        margin: 20px;
+        padding: 25px;
+        background-color: $flock-sky;
+      }
+      .group-img {
+        width: 200px;
+        height: 120px;
+      }
+    }
+  }
+
+  .profile-event-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $flock-indigo;
+    color: white;
+    width: 50%;
+  }
+}
