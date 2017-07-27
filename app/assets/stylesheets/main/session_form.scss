@@ -57,10 +57,10 @@
   margin-top: 40px;
   font-size: 15px;
   border-radius: 10px;
-  background-color: $flock-blue;
+  background-color: $flock-grey;
   transition: filter 0.2s ease;
   &:hover{
-    background-color: $flock-grey;
+    background-color: $flock-blue;
   }
   color: white;
 }

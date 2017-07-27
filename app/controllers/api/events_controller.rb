@@ -22,11 +22,11 @@ class Api::EventsController < ApplicationController
 
   def index
     if params[:group_id]
-      @events = Group.find(params[:group_id]).events
+      @events = Group.find(params[:group_id]).events.sort_by { |event| event.datetime }
     elsif params[:user_id]
-      @events = User.find(params[:user_id]).attending_events
+      @events = User.find(params[:user_id]).attending_events.sort_by { |event| event.datetime }
     else
-      @events = Event.all
+      @events = Event.all.sort_by { |event| event.datetime }
     end
     render :index
   end

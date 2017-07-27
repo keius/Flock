@@ -68,7 +68,7 @@ class GroupForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="group-form- button" type="submit" value="Submit"/>
+            <input className="group-form-button" type="submit" value="Submit"/>
           </div>
         </form>
       </div>

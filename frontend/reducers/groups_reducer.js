@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_GROUP, RECEIVE_GROUPS } from '../actions/group_actions';
+import { RECEIVE_GROUP, RECEIVE_GROUPS, REMOVE_GROUP } from '../actions/group_actions';
 
 const _default = {
   groups: {}
@@ -16,6 +16,11 @@ const groupsReducer = (state = _default, action) => {
     case RECEIVE_GROUPS:
       const groups = action.groups;
       return merge({}, {groups});
+    case REMOVE_GROUP:
+      const id = action.id;
+      const newGroups = Object.assign({}, state.groups);
+      delete newGroups[id];
+      return Object.assign({}, state, {groups: newGroups});
     default:
       return state;
   }

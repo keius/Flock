@@ -8,7 +8,7 @@ class Event < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User
 
-  has_many :rsvps
+  has_many :rsvps, dependent: :destroy;
 
   has_many :users,
     through: :rsvps,

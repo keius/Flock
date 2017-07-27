@@ -33,14 +33,17 @@ class Profile extends React.Component {
     if (this.props.events) {
       return(
         <ul className="profile-events">
-          {this.props.events.map(event => (
-            <li key={`event-${event.id}`}>
-              <Link className="event-detail" to={`/events/${event.id}`}>
-                <h1 className="event-name">{event.title}</h1>
-                <h1 className="event-datetime">{event.datetime}</h1>
-              </Link>
-            </li>
-          ))}
+          {this.props.events.map(event => {
+            return (
+              <li key={`event-${event.id}`}>
+                <Link className="event-detail" to={`/events/${event.id}`}>
+                  <h1 className="event-name">{event.title}</h1>
+                  <h1 className="event-datetime">{event.datetime}</h1>
+                </Link>
+              </li>
+            );
+          })
+        }
         </ul>
       );
     }

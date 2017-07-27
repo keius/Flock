@@ -7,11 +7,11 @@ class Group < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
 
   has_many :members,
     through: :memberships,
     source: :user
 
-  has_many :events
+  has_many :events, dependent: :destroy
 end

@@ -4,15 +4,15 @@ import GroupFormModal from '../modal/group_form_modal';
 
 const authLinks = () => (
   <div className="authNav">
-    <Link to="/login" className="button1">LOG IN</Link>
-    <Link to="/signup" className="button2">SIGN UP</Link>
+    <Link to="/login" className="button1">login</Link>
+    <Link to="/signup" className="button2">signup</Link>
   </div>
 );
 
 const greetLinks = (currentUser, logout, history) => (
   <div className="authNav">
-    <Link to={'/profile'} className="button1">Welcome, {currentUser.first_name}!</Link>
-    <button className="button2" onClick={() => logout().then(() => history.push('/'))}>LOG OUT</button>
+    <Link to={'/profile'} className="button1">welcome, {currentUser.first_name}!</Link>
+    <button className="button2" onClick={() => logout().then(() => history.push('/'))}>logout</button>
   </div>
 );
 

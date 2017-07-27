@@ -14,9 +14,9 @@ export const receiveGroup = (group) => ({
   group
 });
 
-export const removeGroup = group => ({
+export const removeGroup = id => ({
   type: REMOVE_GROUP,
-  group
+  id
 });
 
 //THUNK
@@ -41,5 +41,5 @@ export const updateGroup = (group) => dispatch => (
 );
 
 export const deleteGroup = (id) => dispatch => (
-  APIUtil.deleteGroup(id).then(group => dispatch(removeGroup(group)))
+  APIUtil.deleteGroup(id).then(() => dispatch(removeGroup(id)))
 );

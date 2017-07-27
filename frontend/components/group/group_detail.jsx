@@ -6,6 +6,7 @@ class GroupDetail extends React.Component {
     super(props);
     this.handleJoin = this.handleJoin.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,12 @@ class GroupDetail extends React.Component {
     this.props.leaveGroup(this.props.group.id);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteGroup(this.props.match.params.id)
+    .then(() => this.props.history.push('/profile'));
+  }
+
   membershipButton() {
     if (this.props.currentUser) {
       if (this.props.users[this.props.currentUser.id]) {
@@ -32,6 +39,15 @@ class GroupDetail extends React.Component {
         } else {
           return <button className="group-button" onClick={this.handleJoin}>Join Group</button>;
       }
+    } else {
+      return null;
+    }
+  }
+
+  deleteButton() {
+    if (this.props.group.owner.id === this.props.currentUser.id) {
+      return <button className="group-button" onClick={this.handleDelete}>
+        Delete Group</button>;
     } else {
       return null;
     }
@@ -81,6 +97,8 @@ class GroupDetail extends React.Component {
 
             <div className="group-nav">
               {this.membershipButton()}
+              <br/>
+              {this.deleteButton()}
             </div>
 
             <div className="group-container">

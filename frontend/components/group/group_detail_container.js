@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchGroup} from '../../actions/group_actions';
+import {fetchGroup, deleteGroup} from '../../actions/group_actions';
 import {fetchGroupEvents} from '../../actions/event_actions';
 import {fetchGroupUsers, joinGroup, leaveGroup} from '../../actions/user_actions';
 import GroupDetail from './group_detail';
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
   fetchGroup: id => dispatch(fetchGroup(id)),
   fetchGroupUsers: id => dispatch(fetchGroupUsers(id)),
   fetchGroupEvents: id => dispatch(fetchGroupEvents(id)),
+  deleteGroup: id => dispatch(deleteGroup(id)),
   joinGroup: groupId => dispatch(joinGroup(groupId)),
   leaveGroup: groupId => dispatch(leaveGroup(groupId))
 });

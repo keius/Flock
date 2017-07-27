@@ -9,7 +9,7 @@ const style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(255, 255, 255, 0.75)',
+    backgroundColor : 'rgba(124,177,178,0.75)',
     zIndex          : 10
   },
   content : {
@@ -50,7 +50,9 @@ class GroupFormModal extends React.Component {
   render() {
     return(
       <div>
-        <button className="group-form-button" onClick={this.openModal}>Create Group</button>
+        <button className="group-form-button" onClick={this.openModal}>
+          create group
+        </button>
 
         <Modal
           isOpen={this.state.modalOpen}
