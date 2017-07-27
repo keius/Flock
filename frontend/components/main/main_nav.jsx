@@ -5,7 +5,7 @@ import GroupFormModal from '../modal/group_form_modal';
 const authLinks = () => (
   <div className="authNav">
     <Link to="/login" className="button1">Log In</Link>
-    <Link to="/signup" className="button2">Sign Up</Link>
+    <Link to="/signup" className="button2">SIGN UP</Link>
   </div>
 );
 

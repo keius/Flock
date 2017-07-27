@@ -4,12 +4,12 @@
   overflow: hidden;
   position: fixed;
   width:100%;
-  height: 80px;
+  height: 60px;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $flock-yellow;
+  background-color: $flock-peach;
 
   .groupNav {
     display: flex;
@@ -35,10 +35,9 @@
     padding: 20px;
     font-size: 15px;
     text-decoration: none;
-    background-color: $flock-sky;
     transition: filter 0.2s ease;
     &:hover{
-      background-color: $flock-indigo;
+      background-color: $flock-red;
     }
     color: white;
   }
@@ -50,7 +49,7 @@
     background-color: $flock-blue;
     transition: filter 0.2s ease;
     &:hover{
-      background-color: $flock-indigo;
+      background-color: $flock-grey;
     }
     color: white;
   }
