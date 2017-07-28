@@ -23,6 +23,8 @@ class Api::GroupsController < ApplicationController
   def index
     if params[:user_id]
       @groups = User.find(params[:user_id]).groups
+    elsif params[:search_category]
+      @groups = Group.where(category: params[:search_category])
     else
       @groups = Group.all
     end
@@ -42,6 +44,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:user_id, :title, :category, :description, :location, :image_url)
+    params.require(:group).permit(:user_id, :search_category, :title, :category, :description, :location, :image_url)
   end
 end

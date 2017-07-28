@@ -4,6 +4,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import MainNavContainer from './main/main_nav_container';
 import MainBody from './main/main_body';
 import MainFooter from './main/footer';
+import CategoryDetailContainer from './main/category_detail_container';
 import ProfileContainer from './profile/profile_container';
 import UserDetailContainer from './user/user_detail_container';
 import SessionFormContainer from './session/session_form_container';
@@ -24,6 +25,7 @@ const App = () => (
       </Switch>
 
       <Route exact path='/users/:id' component={UserDetailContainer}/>
+      <Route exact path='/categories/:category' component={CategoryDetailContainer}/>
       <Route exact path='/groups/:id' component={GroupDetailContainer}/>
       <Route exact path='/events/:id' component={EventDetailContainer}/>
     </div>

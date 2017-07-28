@@ -1,20 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class MainCategory extends React.Component {
+class CategoryDetail extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchCategoryGroups(this.props.currentUser.id);
+    if (this.props.category) {
+      this.props.fetchCategoryGroups(this.props.category);
+    } else {
+      this.props.fetchGroups();
+    }
   }
 
   renderGroups() {
     if (this.props.groups) {
       return(
-        <ul className="profile-groups">
+        <ul className="category-groups">
           {this.props.groups.map(group => (
             <li className="group-item" key={`group-${group.id}`}>
               <Link className="group-link" to={`/groups/${group.id}`}>
@@ -33,7 +37,7 @@ class MainCategory extends React.Component {
       <div className="category-background">
         <div className="category-container">
           <section className="category-group-list">
-            <div className="category-group-header">
+            <div className="category-header">
               <i className="fa fa-users" aria-hidden="true"></i>
               &nbsp;&nbsp;
               Groups
@@ -47,4 +51,4 @@ class MainCategory extends React.Component {
   }
 }
 
-export default MainCategory;
+export default CategoryDetail;

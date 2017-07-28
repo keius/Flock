@@ -13,11 +13,11 @@ export const fetchUserGroups = (id) => (
   })
 );
 
-export const fetchCategoryGroups = (id) => (
+export const fetchCategoryGroups = (category) => (
   $.ajax({
     method: 'GET',
     url: 'api/groups',
-    data: {category_id: id}
+    data: {search_category: category}
   })
 );
 

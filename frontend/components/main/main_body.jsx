@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MainCategory from './category_index';
 
 const MainBody = ({currentUser, logout}) => {
 
@@ -15,7 +16,7 @@ const MainBody = ({currentUser, logout}) => {
 
 
       <div className="categories">
-        CATEGORIES
+        <MainCategory/>
       </div>
 
     </div>
