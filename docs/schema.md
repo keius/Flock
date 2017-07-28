@@ -20,7 +20,7 @@ title       | string    | not null
 description | string    |
 location    | string    |
 image_url   | string    |
-category_id | string    |
+category    | string    |
 
 ## events
 column name | data type | details
@@ -29,9 +29,9 @@ id          | integer   | not null, primary key
 group_id    | integer   | not null, foreign key (references groups), indexed
 host_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
-date        | text      | not null
-location    | text      | not null
-description | text      | not null
+datetime    | datetime  |
+location    | text      |
+description | text      |
 image_url   | string    |
 
 ## rsvps

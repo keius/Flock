@@ -23,11 +23,11 @@ Flock is a social website focused on bringing people together for face-to-face e
 
 ### Phase 2: Group Model, API, and components (3 days)
 
-**Objective:** Group can be created, joined, edited and destroyed through the API and belong to a User.
+**Objective:** Group can be created, joined, destroyed through the API and belong to a User.
 
 ### Phase 3: Events (2 days)
 
-**Objective:** Events belong to a Group and can be created, joined, edited and destroyed through the API.
+**Objective:** Events belong to a Group and can be created, joined, and destroyed through the API.
 
 ### Phase 4: Calendar(2 days)
 
