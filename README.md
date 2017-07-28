@@ -36,7 +36,7 @@ A [database schema][schema] was prepared alongside the design proposal.
 
 ## Technology
 
-MeetApp is a single-page application built using Rails and React.js. It was deployed using Heroku services.
+Flock is a single-page application built using Rails and React.js. It was deployed using Heroku services.
 
 
 
