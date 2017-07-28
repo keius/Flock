@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import * as Util from '../../util/util';
 
 class EventDetail extends React.Component {
   constructor (props) {
@@ -34,9 +35,13 @@ class EventDetail extends React.Component {
   rsvpButton() {
     if (this.props.currentUser) {
       if (this.props.users[this.props.currentUser.id]) {
-        return <button className="event-button" onClick={this.handleLeave}>Leave Event</button>;
+        return <button className="event-button" onClick={this.handleLeave}>
+          <i className="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Leave Event
+        </button>;
         } else {
-          return <button className="event-button" onClick={this.handleJoin}>Join Event</button>;
+        return <button className="event-button" onClick={this.handleJoin}>
+          <i className="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;Join Event
+        </button>;
       }
     } else {
       return null;
@@ -46,9 +51,11 @@ class EventDetail extends React.Component {
   deleteButton() {
     if (this.props.currentUser){
       if (this.props.event.host.id === this.props.currentUser.id) {
-        return <button className="event-button" onClick={this.handleDelete}>
-          Delete Event</button>;
-        } else {
+        return (
+          <button className="event-button" onClick={this.handleDelete}>
+          <i className="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Delete Event
+        </button>
+      );} else {
           return null;
         }
     }
@@ -57,12 +64,12 @@ class EventDetail extends React.Component {
   renderRsvps() {
     if (this.props.users) {
       return(
-        <ul className="guest-list">
+        <ul className="member-list">
           {Object.keys(this.props.users).map(id => (
-            <li key={`guest-${id}`}>
-              <Link className="guest-profile" to={`/users/${id}`}>
-                <img className="guest-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.users[id].image_url}.png`}/>
-                <h1 className="guest-name">{this.props.users[id].first_name}</h1>
+            <li key={`member-${id}`}>
+              <Link className="member-profile" to={`/users/${id}`}>
+                <img className="member-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/q_25/v1500965555/user/${this.props.users[id].image_url}.png`}/>
+                <h1 className="member-name">{this.props.users[id].first_name}</h1>
               </Link>
             </li>
           ))}
@@ -87,14 +94,18 @@ class EventDetail extends React.Component {
 
             <div className="event-container">
               <div className="event-details">
+                <h1>Date:
+                  <p>{Util.processDate(this.props.event.datetime)}</p>
+                </h1>
                 <br/>
                 <h1>Location:
                   <p>{this.props.event.location}</p>
                 </h1>
+                <br/>
                 <h1>Group:
                   <Link to={`/groups/${this.props.event.group.id}`}>
                     <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${this.props.event.group.image_url}`}/>
-                    {this.props.event.group.title}
+                    <p>{this.props.event.group.title}</p>
                   </Link>
                 </h1>
                 <br/>
@@ -113,7 +124,7 @@ class EventDetail extends React.Component {
               </div>
 
               <div className="event-guests">
-                <h1>Members</h1>
+                <h1>RSVPs</h1>
                 <br/>
                 {this.renderRsvps()}
               </div>

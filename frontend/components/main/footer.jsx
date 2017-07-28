@@ -1,29 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const MainBody = ({currentUser, logout}) => {
+const MainFooter = () => {
 
   return (
-    <div className="mainBanner">
-      <div className="mainText">
-        <p>What do you love?</p>
-        <p>Do more of it with Flock.</p>
-        <Link className="banner-button" to='/signup'>
-          Sign Up
-        </Link>
+    <div className="mainFooter">
+
+      <div className="github">
+        <a href="https://github.com/keius"/>
+        <i className="fa fa-github" aria-hidden="true"></i>
       </div>
 
-
-      <div className="categories">
-        CATEGORIES
-      </div>
-
-      <div className="footer">
-        FOOTER
+      <div className="linkedin">
+        <a href="https://www.linkedin.com/in/gregory-park-b169ab83/"/>
+        <i className="fa fa-linkedin" aria-hidden="true"></i>
       </div>
 
     </div>
   );
 };
 
-export default MainBody;
+export default MainFooter;

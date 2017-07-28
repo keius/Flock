@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {sortEvents} from '../../reducers/selectors';
 import * as Util from '../../util/util';
 
 class Profile extends React.Component {
@@ -34,12 +35,11 @@ class Profile extends React.Component {
     if (this.props.events) {
       return(
         <ul className="profile-events">
-          {this.props.events.map(event => {
+          {sortEvents(this.props.events).map(event => {
             return (
               <li key={`event-${event.id}`}>
                 <Link className="event-detail" to={`/events/${event.id}`}>
                   <h1 className="event-datetime">{Util.processDate(event.datetime)} PM</h1>
-                  <br/>
                   <h1 className="event-name">{event.title}</h1>
                 </Link>
               </li>

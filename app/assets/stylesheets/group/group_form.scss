@@ -26,22 +26,9 @@
   background-color: white;
 }
 
-.group-button {
-  text-align: center;
-  padding: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-size: 20px;
-  border-radius: 60px;
-  background-color: $flock-peach;
-  transition: filter 0.2s ease;
-  &:hover{
-    background-color: $flock-orange;
-  }
-  color: black;
-}
-
 .group-form-button {
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import EventFormModal from '../modal/event_form_modal';
 
 class GroupDetail extends React.Component {
   constructor (props) {
@@ -48,14 +49,29 @@ class GroupDetail extends React.Component {
     }
   }
 
+  createButton() {
+    if (this.props.currentUser){
+      if (this.props.users[this.props.currentUser.id]) {
+        return (
+          <EventFormModal/>
+        );
+      }
+    } else {
+      return null;
+    }
+  }
+
   deleteButton() {
     if (this.props.currentUser){
       if (this.props.group.owner.id === this.props.currentUser.id) {
-        return <button className="group-button" onClick={this.handleDelete}>
-          Delete Group</button>;
-        } else {
-          return null;
-        }
+        return (
+          <button className="group-delete-button" onClick={this.handleDelete}>
+            <i className="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Delete Group
+          </button>
+        );
+      }
+    } else {
+      return null;
     }
   }
 
@@ -103,6 +119,8 @@ class GroupDetail extends React.Component {
 
             <div className="group-nav">
               {this.membershipButton()}
+              <br/>
+              {this.createButton()}
               <br/>
               {this.deleteButton()}
             </div>

@@ -3,12 +3,19 @@
 .profile-background {
   display: flex;
   justify-content: center;
-  background: url(http://res.cloudinary.com/dvylj9hyw/image/upload/v1501194953/group_banner.jpg);
+  background:
+    linear-gradient(
+      rgba(24,211,215,0.25),
+      rgba(24,211,215,0.25)
+    ),
+    url(http://res.cloudinary.com/dvylj9hyw/image/upload/e_blur:400/v1501194953/group_banner.jpg);
+  background-size: cover;
 }
 .profile-container {
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+  margin-bottom: 100px;
 
   .profile-group-list {
     display: flex;
@@ -43,7 +50,7 @@
         margin: 10px;
         padding: 10px;
         border-radius: 5px;
-        background-color:white;
+        background-color: $flock-darkgrey;
         &:hover{
           opacity: .8;
         }
@@ -54,6 +61,7 @@
       }
       .group-text {
         margin-top: 20px;
+        color: white;
       }
     }
   }
@@ -77,7 +85,7 @@
 
     .profile-events {
       display: flex;
-      margin-top: 30px;
+      margin-top: 50px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
@@ -86,17 +94,19 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        border-radius: 5px;
         margin: 10px;
         padding: 10px;
+        background-color: $flock-darkgrey;
 
         .event-datetime {
-          background-color: black;
+          background-color: $flock-blue;
           color: white;
         }
 
         .event-name {
           background-color: white;
-          color:black;
+          color: black;
         }
       }
     }

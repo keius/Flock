@@ -19,10 +19,9 @@ const style = {
     left            : '50%',
     width           : '400px',
     minWidth        : '400px',
-    height          : '430px',
-    minHeight       : '430px',
+    height          : '360px',
+    minHeight       : '360px',
     border          : '1px solid #ccc',
-    padding         : '20px',
     zIndex          : 11
   }
 };

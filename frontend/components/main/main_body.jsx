@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MainFooter from './footer';
 
 const MainBody = ({currentUser, logout}) => {
 
@@ -19,7 +20,7 @@ const MainBody = ({currentUser, logout}) => {
       </div>
 
       <div className="footer">
-        FOOTER
+        <MainFooter/>
       </div>
 
     </div>

@@ -4,7 +4,9 @@ class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      group_id: `${this.props.id}`,
       title: "",
+      datetime: "",
       description: "",
       location: "",
       image_url: ""
@@ -15,8 +17,8 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const group = this.state;
-    this.props.createGroup(group).then(this.props.closeModal);
+    const event = this.state;
+    this.props.createEvent(event).then(this.props.closeModal);
   }
 
   update(field) {
@@ -27,17 +29,26 @@ class EventForm extends React.Component {
 
   render() {
     return (
-      <div className="group-form-background">
-        <form onSubmit={this.handleSubmit} className="group-form-container">
+      <div className="event-form-background">
+        <form onSubmit={this.handleSubmit} className="event-form-container">
           <p>Create a Group!</p>
-          <div className="group-form">
+          <div className="event-form">
             <br/>
             <label>Title:
               <input
                 type="text"
                 value={this.state.title}
                 onChange={this.update('title')}
-                className="group-input"
+                className="event-input"
+              />
+            </label>
+            <br/>
+            <label>Date/Time:
+              <input
+                type="datetime-local"
+                value={this.state.datetime}
+                onChange={this.update('datetime')}
+                className="event-input"
               />
             </label>
             <br/>
@@ -46,7 +57,7 @@ class EventForm extends React.Component {
                 type="textarea"
                 value={this.state.description}
                 onChange={this.update('description')}
-                className="group-input"
+                className="event-input"
               />
             </label>
             <br/>
@@ -55,20 +66,11 @@ class EventForm extends React.Component {
                 type="string"
                 value={this.state.location}
                 onChange={this.update('location')}
-                className="group-input"
+                className="event-input"
               />
             </label>
             <br/>
-            <label>Group Banner:
-              <input
-                type="string"
-                value={this.state.image_url}
-                onChange={this.update('image_url')}
-                className="group-input"
-              />
-            </label>
-            <br/>
-            <input className="group-form- button" type="submit" value="Submit"/>
+            <input className="event-button" type="submit" value="Submit"/>
           </div>
         </form>
       </div>

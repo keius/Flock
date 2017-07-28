@@ -9,7 +9,7 @@ const style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(255, 255, 255, 0.75)',
+    backgroundColor : 'rgba(124,177,178,0.75)',
     zIndex          : 10
   },
   content : {
@@ -17,10 +17,10 @@ const style = {
     transform       : 'translate(-50%, -50%)',
     top             : '50%',
     left            : '50%',
-    width           : '400px',
-    minWidth        : '400px',
-    height          : '430px',
-    minHeight       : '430px',
+    width           : '420px',
+    minWidth        : '420px',
+    height          : '420px',
+    minHeight       : '420px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11
@@ -50,7 +50,9 @@ class EventFormModal extends React.Component {
   render() {
     return(
       <div>
-        <button className="button" onClick={this.openModal}>Create Event</button>
+        <button className="event-button" onClick={this.openModal}>
+          <i className="fa fa-calendar-plus-o" aria-hidden="true"></i>&nbsp;&nbsp;Create Event
+        </button>
 
         <Modal
           isOpen={this.state.modalOpen}

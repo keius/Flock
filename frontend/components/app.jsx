@@ -25,6 +25,7 @@ const App = () => (
       <Route exact path='/users/:id' component={UserDetailContainer}/>
       <Route exact path='/groups/:id' component={GroupDetailContainer}/>
       <Route exact path='/events/:id' component={EventDetailContainer}/>
+
     </div>
   </div>
 );

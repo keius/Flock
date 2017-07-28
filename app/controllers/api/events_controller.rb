@@ -4,7 +4,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.host_id = current_user.id
     if @event.save
-      RSVP.create({user_id: @event.host_id, event_id: @event.id})
+      Rsvp.create({user_id: @event.host_id, event_id: @event.id})
       render :show
     else
       render json: @event.errors.full_messages, status: 422
