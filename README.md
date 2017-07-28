@@ -101,7 +101,7 @@ Because of the nature of single-page application, careful planning went into str
 
 ## React - Redux
 
-Flock uses React Router 4. All of the React components, Redux action creators, API utilities, dispatcher, and stores are located in the [frontend](../frontend) directory.
+Flock uses React Router 4. All of the React components, Redux action creators, API utilities, dispatcher, and stores are located in the [frontend](./frontend) directory.
 
 ## npm
 
