@@ -52,7 +52,7 @@ class EventDetail extends React.Component {
     if (this.props.currentUser){
       if (this.props.event.host.id === this.props.currentUser.id) {
         return (
-          <button className="event-button" onClick={this.handleDelete}>
+          <button className="group-delete-button" onClick={this.handleDelete}>
           <i className="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Delete Event
         </button>
       );} else {

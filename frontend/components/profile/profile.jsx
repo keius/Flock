@@ -39,7 +39,7 @@ class Profile extends React.Component {
             return (
               <li key={`event-${event.id}`}>
                 <Link className="event-detail" to={`/events/${event.id}`}>
-                  <h1 className="event-datetime">{Util.processDate(event.datetime)} PM</h1>
+                  <h1 className="event-datetime">{Util.processDate(event.datetime)}</h1>
                   <h1 className="event-name">{event.title}</h1>
                 </Link>
               </li>

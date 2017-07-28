@@ -743,7 +743,7 @@ green_eating = Event.create({
 })
 
 first_brunch = Event.create({
-  group_id: letsdobrunch.id, title: "First Brunch", host_id: letsdobrunch.owner.id,
+  group_id: letdobrunch.id, title: "First Brunch", host_id: letdobrunch.owner.id,
   location: "Hyde Park, Chicago", description: "This is the best brunch place", image_url: "first_brunch"
 })
 
