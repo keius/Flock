@@ -48,7 +48,56 @@ As a single-page application, Flock utilizes the React.js framework and follows 
 
 Because of the nature of single-page application, careful planning went into structuring the state. Each main component (Session, User, Group, Event) has its own slice of state, that are all contained inside the store of the application. In order to retrieve information such as associations without overloading or redundancy, manual data fetch requests were created and implemented in order to extract only the relevant parts from the backend, and keeping main components separated (i.e. On looking at the group detail page, each group can have events, but the groups slice of state would contain just that group. Furthermore, the events will be fetched on page load with a request to the backend to just the associated events for the group. This allows a constant state structure that makes it easy to debug as well as providing the flexibility needed to implement future features.
 
-![Sample State][sample state]
+// state on accessing a logged in user's profile page
+```js
+{
+  session: {
+    current_user: 1
+    errors: []
+  },
+
+  users: {
+    users: {
+      1: {
+        id: 1,
+        username: "greg",
+        password_digest: "party-hash",
+        session_token: "party-token",
+        full_name: "Greg",
+        image_url: "greg.png",
+      }
+    }
+  }
+
+  groups: {
+    groups: {  
+      1: {
+        id: 1,
+        owner_id: 1,
+        title: "Party Animals",
+        description: "Party Animals",
+        location: "Party City",
+        image_url: "party.png",
+      }
+    }
+  },
+
+  events: {
+    groups: {
+      1: {
+        id: 1,
+        group_id: 1,
+        host_id: 1,
+        title: "First Party",
+        date: "TBD",
+        location: "Party City",
+        description: "Partay",
+        image_url: "first-party.png",
+      }
+    }
+  }
+}
+```
 
 ## React - Redux
 
@@ -128,7 +177,6 @@ The features originally implemented are basic features to bring people together.
 [user]: ./docs/images/user_page.png "A user's page"
 [profile]: ./docs/images/profile_page.png "The user profile page"
 [category]: ./docs/images/category_page.png "Groups for a particular category"
-[sample state]: ./docs/sample_state.md "Sample State"
 [proposal]: ./docs/README.md
 [schema]: ./docs/schema.md
 [future]: ./docs/future.md
