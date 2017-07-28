@@ -31,7 +31,7 @@ class EventForm extends React.Component {
     return (
       <div className="event-form-background">
         <form onSubmit={this.handleSubmit} className="event-form-container">
-          <p>Create a Group!</p>
+          <p>Create an Event!</p>
           <div className="event-form">
             <br/>
             <label>Title:

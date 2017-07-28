@@ -8,7 +8,7 @@
       rgba(24,211,215,0.25),
       rgba(24,211,215,0.25)
     ),
-    url(http://res.cloudinary.com/dvylj9hyw/image/upload/e_blur:400/v1501194953/group_banner.jpg);
+    url(http://res.cloudinary.com/dvylj9hyw/image/upload/e_blur:400,b_white,o_40/v1501194953/group_banner.jpg);
   background-size: cover;
 }
 .profile-container {
@@ -48,7 +48,7 @@
       }
       .group-link {
         margin: 10px;
-        padding: 10px;
+        padding: 5px;
         border-radius: 5px;
         background-color: $flock-darkgrey;
         &:hover{
@@ -60,7 +60,7 @@
         height: 140px;
       }
       .group-text {
-        margin-top: 20px;
+        margin-top: 5px;
         color: white;
       }
     }
@@ -94,10 +94,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border-radius: 5px;
         margin: 10px;
-        padding: 10px;
-        background-color: $flock-darkgrey;
+        padding: 2px;
+        background-color: white;
 
         .event-datetime {
           background-color: $flock-blue;
@@ -106,7 +105,7 @@
 
         .event-name {
           background-color: white;
-          color: black;
+          color: $flock-darkgrey;
         }
       }
     }

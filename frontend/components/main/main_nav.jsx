@@ -16,6 +16,14 @@ const greetLinks = (currentUser, logout, history) => (
   </div>
 );
 
+const renderNav = (currentUser) => {
+  if (currentUser) {
+    return <GroupFormModal/>;
+  } else {
+    return null;
+  }
+};
+
 const MainNav = ({currentUser, logout, history}) => {
   const main = () => (
     currentUser ?
@@ -25,7 +33,7 @@ const MainNav = ({currentUser, logout, history}) => {
     <nav>
       <div className="nav-background"></div>
       <div className="mainNav">
-        <div className="groupNav">{<GroupFormModal/>}</div>
+        <div className="groupNav">{renderNav(currentUser)}</div>
         <Link to='/' className="homeNav">
           <img className="logo" src='http://res.cloudinary.com/dvylj9hyw/image/upload/v1500570278/main/logo_1.png'/>
         </Link>

@@ -94,7 +94,7 @@ class EventDetail extends React.Component {
 
             <div className="event-container">
               <div className="event-details">
-                <h1>Date:
+                <h1>Date/Time:
                   <p>{Util.processDate(this.props.event.datetime)}</p>
                 </h1>
                 <br/>
