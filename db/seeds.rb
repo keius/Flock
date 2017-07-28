@@ -442,6 +442,319 @@ women_networking = Event.create({
   location: "Alnwick Castle, Northumberland, England", description: "Meet powerful women", image_url: "women_networking"
 })
 
+meetup = Event.create({
+  group_id: grandpas_who_code.id, title: "meetup", host_id: grandpas_who_code.owner.id,
+  location: "Glenorchy, New Zealand", description: "hello_world", image_url: "meetup"
+})
+
+open_house = Event.create({
+  group_id: ruby_rails.id, title: "Open House", host_id: ruby_rails.owner.id,
+  location: "New York City", description: "An invitation to my humble abode", image_url: "open_house"
+})
+
+rails_tutorial = Event.create({
+  group_id: ruby_rails.id, title: "Rails Tutorial with Jarvis", host_id: ruby_rails.owner.id,
+  location: "New York City", description: "Jarvis is actually a much better teacher than me.", image_url: "rails_tutorial"
+})
+
+structural_integrity = Event.create({
+  group_id: death_star_dev.id, title: "Important Structural Integrity Test", host_id: death_star_dev.owner.id,
+  location: "Mount Etna, Italy", description: "Free chipotle after the test if it passes", image_url: "structural_integrity"
+})
+
+recalculation = Event.create({
+  group_id: death_star_dev.id, title: "Variable Recalculation", host_id: death_star_dev.owner.id,
+  location: "Mount Etna, Italy", description: "Clearly we need some work", image_url: "recalculation"
+})
+
+structural_integrity2 = Event.create({
+  group_id: death_star_dev.id, title: "Crucial Structural Integrity Test", host_id: death_star_dev.owner.id,
+  location: "Mount Etna, Italy", description: "Free chipotle after the test if it passes", image_url: "structural_integrity2"
+})
+
+intro_diving = Event.create({
+  group_id: scubadiving_bb.id, title: "Intro to Diving", host_id: scubadiving_bb.owner.id,
+  location: "Bikini Atoll, Marshall Islands", description: "Bring your gear", image_url: "intro_diving"
+})
+
+talk_marine = Event.create({
+  group_id: scubadiving_bb.id, title: "A Talk on Marine Preservation", host_id: scubadiving_bb.owner.id,
+  location: "Bikini Atoll, Marshall Islands", description: "How to not scare away the pretty fish, and how to not look pretty to the scary fish", image_url: "talk_marine"
+})
+
+easy_hike = Event.create({
+  group_id: hikers_mordor.id, title: "Easy Hike Attempt", host_id: hikers_mordor.owner.id,
+  location: "Mount Ngauruhoe, New Zealand", description: "For noobs", image_url: "easy_hike"
+})
+
+medium_hike = Event.create({
+  group_id: hikers_mordor.id, title: "Medium Hike Attempt", host_id: hikers_mordor.owner.id,
+  location: "Mount Ngauruhoe, New Zealand", description: "For intermediates", image_url: "medium_hike"
+})
+
+hard_hike = Event.create({
+  group_id: hikers_mordor.id, title: "Hard Hike Attempt", host_id: hikers_mordor.owner.id,
+  location: "Mount Ngauruhoe, New Zealand", description: "For experts", image_url: "hard_hike"
+})
+
+times_square = Event.create({
+  group_id: nyc_cyclers.id, title: "First Ride through Times Square", host_id: nyc_cyclers.owner.id,
+  location: "New York City", description: "Come join us for our first ride through the city!", image_url: "times_square"
+})
+
+fundamentals_racing = Event.create({
+  group_id: hot_rides.id, title: "The Fundamentals of Racing", host_id: hot_rides.owner.id,
+  location: "New York City", description: "Come if you don't want to flip over in your first race", image_url: "fundamentals_racing"
+})
+
+first_race = Event.create({
+  group_id: hot_rides.id, title: "First Race!", host_id: hot_rides.owner.id,
+  location: "New York City", description: "Leggo", image_url: "first_race"
+})
+
+yoga_night = Event.create({
+  group_id: young_active.id, title: "Yoga Night!", host_id: young_active.owner.id,
+  location: "New York City", description: "Time to loosen your joints! And your life!", image_url: "yoga_night"
+})
+
+half_marathon = Event.create({
+  group_id: young_active.id, title: "Half Marathon", host_id: young_active.owner.id,
+  location: "New York City", description: "Join us in this popular event! Beginners especially welcome!", image_url: "half_marathon"
+})
+
+charity_walk = Event.create({
+  group_id: young_active.id, title: "Charity Walk", host_id: young_active.owner.id,
+  location: "New York City", description: "Proceeds go to the children's hospital", image_url: "charity_walk"
+})
+
+silent_night = Event.create({
+  group_id: christmas_hogsmeade.id, title: "Silent Night Rehearsal", host_id: christmas_hogsmeade.owner.id,
+  location: "Goathland, North Yorkshire, England", description: "PLEASE BRING WANDS", image_url: "silent_night"
+})
+
+on_composition = Event.create({
+  group_id: instrument_jam.id, title: "On Composition - Minnie Mouse", host_id: instrument_jam.owner.id,
+  location: "Anaheim CA", description: "A guest appearance by the master musician Minnie", image_url: "on_composition"
+})
+
+night_of_blues = Event.create({
+  group_id: blues_lovers.id, title: "A Night of Blues", host_id: blues_lovers.owner.id,
+  location: "Washington DC", description: "A collection of history's greatest hits", image_url: "night_of_blues"
+})
+
+first_jam = Event.create({
+  group_id: blues_lovers.id, title: "First Jam Session", host_id: blues_lovers.owner.id,
+  location: "Washington DC", description: "Let's play some blues!", image_url: "first_jam"
+})
+
+bring_instruments = Event.create({
+  group_id: acoustic_jam.id, title: "Bring All Instruments", host_id: acoustic_jam.owner.id,
+  location: "Cartersville, Georgia", description: "I AM GROOT", image_url: "bring_instruments"
+})
+
+lets_play = Event.create({
+  group_id: acoustic_jam.id, title: "Let's Play", host_id: acoustic_jam.owner.id,
+  location: "Cartersville, Georgia", description: "I AM GROOT", image_url: "lets_play"
+})
+
+first_concert = Event.create({
+  group_id: open_mic_yoda.id, title: "First Concert", host_id: open_mic_yoda.owner.id,
+  location: "Death Valley, NV", description: "The greatest musicians in the universe", image_url: "first_concert"
+})
+
+intro_delivery = Event.create({
+  group_id: midwives_women.id, title: "Intro to Delivery", host_id: midwives_women.owner.id,
+  location: "Grindelwald, Switzerland", description: "The ins and outs of midwiving", image_url: "intro_delivery"
+})
+
+bring_kids = Event.create({
+  group_id: creative_dads.id, title: "Bring Your Kids!", host_id: creative_dads.owner.id,
+  location: "Mount Etna, Italy", description: "Bring your children, and share your experience! Free Food.", image_url: "bring_kids"
+})
+
+stop_crying = Event.create({
+  group_id: creative_dads.id, title: "How to Stop Crying Babies", host_id: creative_dads.owner.id,
+  location: "Mount Etna, Italy", description: "What does it take to stop a crying child?", image_url: "stop_crying"
+})
+
+bedtime_stories = Event.create({
+  group_id: creative_dads.id, title: "Best Bedtime Stories", host_id: creative_dads.owner.id,
+  location: "Mount Etna, Italy", description: "Discussion on which bedtime stories are most beneficial for development", image_url: "bedtime_stories"
+})
+
+textbook_talk = Event.create({
+  group_id: intergalactic_homeschoolers.id, title: "Textbook Talk", host_id: intergalactic_homeschoolers.owner.id,
+  location: "Emeryville, California", description: "A talk on the best available resources for young homeschooled children", image_url: "textbook_talk"
+})
+
+math_important = Event.create({
+  group_id: intergalactic_homeschoolers.id, title: "How Important is Math?", host_id: intergalactic_homeschoolers.owner.id,
+  location: "Emeryville, California", description: "Let's discuss math. Why do we need it?", image_url: "math_important"
+})
+
+art_fundamentals = Event.create({
+  group_id: drop_clay_studio.id, title: "Mastering the Fundamentals", host_id: drop_clay_studio.owner.id,
+  location: "Cartersville, Georgia", description: "I AM GROOT", image_url: "art_fundamentals"
+})
+
+first_dig = Event.create({
+  group_id: rock_carvers.id, title: "First Dig!", host_id: rock_carvers.owner.id,
+  location: "Ballintoy, Northern Ireland", description: "Join us for our first dig for our materials!", image_url: "first_dig"
+})
+
+field_trip = Event.create({
+  group_id: fine_arts.id, title: "Field Trip to the Museum!", host_id: fine_arts.owner.id,
+  location: "Anaheim, CA", description: "Join us as we appreciate some fine art", image_url: "field_trip"
+})
+
+first_drawing = Event.create({
+  group_id: figure_drawing.id, title: "First Drawing", host_id: figure_drawing.owner.id,
+  location: "San Francisco, CA", description: "Materials will be provided", image_url: "first_drawing"
+})
+
+second_drawing = Event.create({
+  group_id: figure_drawing.id, title: "Second Drawing", host_id: figure_drawing.owner.id,
+  location: "San Francisco, CA", description: "Materials will be provided", image_url: "second_drawing"
+})
+
+mind_meditation = Event.create({
+  group_id: doodle_mickey.id, title: "A Mind in Meditation", host_id: doodle_mickey.owner.id,
+  location: "Anaheim, CA", description: "A discussion on how art can meditative. A short session afterwards.", image_url: "mind_meditation"
+})
+
+shake_hand = Event.create({
+  group_id: best_business.id, title: "Shake My Hand", host_id: best_business.owner.id,
+  location: "New York City", description: "You get to actually shake my hand.", image_url: "shake_hand"
+})
+
+reverse_psychology = Event.create({
+  group_id: mentor_project.id, title: "Reverse Psychology", host_id: mentor_project.owner.id,
+  location: "Mount Etna, Italy", description: "How to use reverse psychology to become the best", image_url: "reverse_psychology"
+})
+
+good_cop = Event.create({
+  group_id: mentor_project.id, title: "Good Cop, Bad Cop", host_id: mentor_project.owner.id,
+  location: "Mount Etna, Italy", description: "The art of motivating your pupils", image_url: "good_cop"
+})
+
+networking_session = Event.create({
+  group_id: ultimate_wealth_builders.id, title: "Networking Session", host_id: ultimate_wealth_builders.owner.id,
+  location: "New York City", description: "Talk to me. For free.", image_url: "networking_session"
+})
+
+have_money = Event.create({
+  group_id: ultimate_wealth_builders.id, title: "How to Have Money", host_id: ultimate_wealth_builders.owner.id,
+  location: "New York City", description: "It's really simple actually.", image_url: "have_money"
+})
+
+first_practice = Event.create({
+  group_id: hogwarts_quidditch.id, title: "First Practice", host_id: hogwarts_quidditch.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "Bring all your gear. It's gonna be rough.", image_url: "first_practice"
+})
+
+second_practice = Event.create({
+  group_id: hogwarts_quidditch.id, title: "Second Practice", host_id: hogwarts_quidditch.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "Bring all your gear. It's gonna be rough.", image_url: "second_practice"
+})
+
+pizza_party = Event.create({
+  group_id: hogwarts_quidditch.id, title: "Pizza Party", host_id: hogwarts_quidditch.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "A celebration for the season!", image_url: "pizza_party"
+})
+
+what_golf = Event.create({
+  group_id: nine_hole.id, title: "What is golf?", host_id: nine_hole.owner.id,
+  location: "New York City", description: "Lemme tell you something about golf", image_url: "what_golf"
+})
+
+talk_pro = Event.create({
+  group_id: nine_hole.id, title: "Talk with a pro", host_id: nine_hole.owner.id,
+  location: "New York City", description: "We are getting the best of pros to come see us.", image_url: "talk_pro"
+})
+
+lets_ball = Event.create({
+  group_id: occasional_ball.id, title: "Let's Ball", host_id: occasional_ball.owner.id,
+  location: "New York City", description: "A quick pickup game?", image_url: "lets_ball"
+})
+
+first_run = Event.create({
+  group_id: run_groot.id, title: "First Run", host_id: run_groot.owner.id,
+  location: "Cartersville, Georgia", description: "I AM GROOT", image_url: "first_run"
+})
+
+rehabilitation = Event.create({
+  group_id: run_groot.id, title: "Rehabilitation", host_id: run_groot.owner.id,
+  location: "Cartersville, Georgia", description: "I AM GROOT", image_url: "rehabilitation"
+})
+
+note_diet = Event.create({
+  group_id: fitness_friends.id, title: "A Note on Diet", host_id: fitness_friends.owner.id,
+  location: "New York City", description: "Let's talk diet", image_url: "note_diet"
+})
+
+weigh_in = Event.create({
+  group_id: fitness_friends.id, title: "Weigh-In!", host_id: fitness_friends.owner.id,
+  location: "New York City", description: "Don't be afraid. We have to start somewhere.", image_url: "weigh_in"
+})
+
+history_dragons = Event.create({
+  group_id: dragons_real.id, title: "The History of Dragons", host_id: dragons_real.owner.id,
+  location: "Reyjkavik, Iceland", description: "We have a PhD joining us.", image_url: "history_dragons"
+})
+
+playing_fire = Event.create({
+  group_id: dragons_real.id, title: "Playing with Fire", host_id: dragons_real.owner.id,
+  location: "Reyjkavik, Iceland", description: "This is the best way to get acclimated to dragons", image_url: "playing_fire"
+})
+
+mindful_mediation = Event.create({
+  group_id: meditation_gandalf.id, title: "Mindful Meditation", host_id: meditation_gandalf.owner.id,
+  location: "Glenorchy, New Zealand", description: "Peace. In your mind.", image_url: "mindful_mediation"
+})
+
+white_light = Event.create({
+  group_id: meditation_gandalf.id, title: "White Light Healing", host_id: meditation_gandalf.owner.id,
+  location: "Glenorchy, New Zealand", description: "New discovery", image_url: "white_light"
+})
+
+naptime = Event.create({
+  group_id: healing_hypnosis.id, title: "Naptime", host_id: healing_hypnosis.owner.id,
+  location: "Asheville, North Carolina", description: "You know what time it is", image_url: "naptime"
+})
+
+art_hypnosis = Event.create({
+  group_id: healing_hypnosis.id, title: "The Art of Hypnosis", host_id: healing_hypnosis.owner.id,
+  location: "Asheville, North Carolina", description: "It's better than what you imagine", image_url: "art_hypnosis"
+})
+
+taste_test = Event.create({
+  group_id: omg_food.id, title: "Taste Test", host_id: omg_food.owner.id,
+  location: "New York City", description: "The battle of the cuisines!", image_url: "taste_test"
+})
+
+food_truck = Event.create({
+  group_id: omg_food.id, title: "Food Truck Field Trip", host_id: omg_food.owner.id,
+  location: "New York City", description: "The best field trip ever.", image_url: "food_truck"
+})
+
+green_eating = Event.create({
+  group_id: vegetarian_society.id, title: "A Talk on Green Eating", host_id: vegetarian_society.owner.id,
+  location: "New York City", description: "Join us as we discuss the environmental implications of our diet", image_url: "green_eating"
+})
+
+first_brunch = Event.create({
+  group_id: letsdobrunch.id, title: "First Brunch", host_id: letsdobrunch.owner.id,
+  location: "Hyde Park, Chicago", description: "This is the best brunch place", image_url: "first_brunch"
+})
+
+pasta_fundamentals = Event.create({
+  group_id: italian_hagrid.id, title: "The Fundamentals of Pasta", host_id: italian_hagrid.owner.id,
+  location: "Alnwick Castle, Northumberland, England", description: "It's all about the noodles", image_url: "pasta_fundamentals"
+})
+
+
+
+
 Event.all.each do |event|
   num = rand(30)
   random_datetime = num.day.from_now.beginning_of_hour.localtime + num.hour

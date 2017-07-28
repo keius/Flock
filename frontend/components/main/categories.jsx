@@ -30,25 +30,16 @@ class MainCategory extends React.Component {
 
   render() {
     return (
-      <div className="profile-background">
-        <div className="profile-container">
-          <section className="profile-group-list">
-            <div className="profile-group-header">
+      <div className="category-background">
+        <div className="category-container">
+          <section className="category-group-list">
+            <div className="category-group-header">
               <i className="fa fa-users" aria-hidden="true"></i>
               &nbsp;&nbsp;
               Groups
             </div>
             <br/>
             {this.renderGroups()}
-          </section>
-
-          <section className="profile-event-list">
-            <p className="profile-event-header">
-              <i className="fa fa-calendar" aria-hidden="true"></i>
-              &nbsp;&nbsp;
-              Events
-            </p>
-            {this.renderEvents()}
           </section>
         </div>
       </div>

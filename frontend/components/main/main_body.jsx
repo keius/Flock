@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import MainFooter from './footer';
 
 const MainBody = ({currentUser, logout}) => {
 
@@ -17,10 +16,6 @@ const MainBody = ({currentUser, logout}) => {
 
       <div className="categories">
         CATEGORIES
-      </div>
-
-      <div className="footer">
-        <MainFooter/>
       </div>
 
     </div>
