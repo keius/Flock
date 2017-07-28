@@ -40,7 +40,7 @@ class CategoryDetail extends React.Component {
             <div className="category-header">
               <i className="fa fa-users" aria-hidden="true"></i>
               &nbsp;&nbsp;
-              Groups
+              {this.props.category}
             </div>
             <br/>
             {this.renderGroups()}

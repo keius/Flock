@@ -50,5 +50,7 @@
     "sass-loader": "^6.0.6",
     "webpack": "^3.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1"
+  }
 }

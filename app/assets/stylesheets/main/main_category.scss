@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   padding: 15px;
-  height: 500px;
   width: 100%;
   background-color: rgba(30,38,36,0.5);
 
@@ -16,6 +15,7 @@
     ul {
       display: flex;
       flex-flow: row wrap;
+      justify-content: center;
       background: transparent;
       margin-top: 40px;
 
