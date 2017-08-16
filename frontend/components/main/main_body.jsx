@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import MainCategory from './category_index';
 
-const MainBody = ({currentUser, logout}) => {
+const MainBody = ({}) => {
 
   return (
     <div className="mainBanner">

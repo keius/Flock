@@ -20,8 +20,8 @@ const renderNav = (currentUser) => {
   if (currentUser) {
     return (
       <div className="groupLinks">
-        <GroupFormModal/>;
-        <GroupIndex/>;
+        <GroupFormModal/>
+        <Link to={'/categories'} className="button1">explore groups</Link>
       </div>
     );
   } else {

@@ -32,6 +32,11 @@
     margin-left: 20px;
     align-items: center;
     justify-content: flex-start;
+    .groupLinks {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .homeNav {
