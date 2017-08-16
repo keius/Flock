@@ -21,6 +21,7 @@ const renderNav = (currentUser) => {
     return (
       <div className="groupLinks">
         <GroupFormModal/>
+        &nbsp;&nbsp;&nbsp;
         <Link to={'/categories'} className="button1">explore groups</Link>
       </div>
     );

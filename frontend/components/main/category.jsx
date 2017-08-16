@@ -8,6 +8,9 @@ const Category = ({}) => {
     <div className="categoryBanner">
       <div className="categories">
         <div className="mainCategory">
+          <div className="category-header">
+            <h1>Categories</h1>
+          </div>
           <ul>
             <Link className="category-link" to={'/categories/tech'}>
               <img className="category-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1501274471/category/category_tech.jpg`}/>
