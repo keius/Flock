@@ -13,7 +13,7 @@ const MainFooter = () => {
       </div>
 
       <div className="linkedin">
-        <a target="_blank" href="https://www.linkedin.com/in/gregory-park-b169ab83/">
+        <a target="_blank" href="https://www.linkedin.com/in/gregory-park/">
           <i className="fa fa-linkedin" aria-hidden="true"></i>
         </a>
       </div>

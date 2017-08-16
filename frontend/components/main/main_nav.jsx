@@ -18,7 +18,12 @@ const greetLinks = (currentUser, logout, history) => (
 
 const renderNav = (currentUser) => {
   if (currentUser) {
-    return <GroupFormModal/>;
+    return (
+      <div className="groupLinks">
+        <GroupFormModal/>;
+        <GroupIndex/>;
+      </div>
+    );
   } else {
     return null;
   }
