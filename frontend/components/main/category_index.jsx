@@ -7,7 +7,7 @@ const MainCategory = () => {
     <div className="mainCategory">
       <div className="category-header">
         <p>categories</p>
-        <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+        <i className="fa fa-arrow-circle-down fa-lg" aria-hidden="true"></i>
       </div>
       <ul>
         <Link className="category-link" to={'/categories/tech'}>

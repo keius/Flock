@@ -25,9 +25,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      overflow: auto;
       width: 100%;
-      height: auto;
+      overflow: auto;
 
       .category-header {
         display: flex;
@@ -42,7 +41,7 @@
 
       .category-groups {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: 50px;
 
         .group-link {
