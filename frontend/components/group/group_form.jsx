@@ -7,6 +7,7 @@ class GroupForm extends React.Component {
       title: "",
       description: "",
       location: "",
+      category: "",
       image_url: "corgi"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,6 +56,15 @@ class GroupForm extends React.Component {
                 type="string"
                 value={this.state.location}
                 onChange={this.update('location')}
+                className="group-input"
+              />
+            </label>
+            <br/>
+            <label>Category:
+              <input
+                type="string"
+                value={this.state.category}
+                onChange={this.update('category')}
                 className="group-input"
               />
             </label>
