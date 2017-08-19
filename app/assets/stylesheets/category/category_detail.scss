@@ -17,7 +17,6 @@
     justify-content: center;
     margin-top: 150px;
     margin-bottom: 250px;
-    overflow: auto;
     height: 500px;
     width: 100%;
     background-color: rgba(30,38,36,0.5);
@@ -26,10 +25,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow: auto;
       width: 100%;
 
       .category-header {
         display: flex;
+        position: fixed;
         justify-content: center;
         align-items: center;
         margin-top: 50px;
@@ -42,7 +43,8 @@
       .category-groups {
         display: flex;
         flex-direction: row;
-        margin-top: 50px;
+        margin-top: 150px;
+        width: 100%;
 
         .group-link {
           display: flex;
@@ -53,7 +55,7 @@
           background-color: $flock-darkgrey;
 
           .group-img {
-            width: 250px;
+            width: 300px;
             height: 200px;
           }
 

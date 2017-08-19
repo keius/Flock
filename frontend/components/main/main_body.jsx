@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import MainCategory from './category_index';
 
 const MainBody = ({}) => {
-
+  window.scrollTo(0, 0);
+  
   return (
     <div className="mainBanner">
       <div className="mainText">

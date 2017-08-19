@@ -58,6 +58,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    window.scrollTo(0, 0);
     return (
       <div className="session-background">
         <form onSubmit={this.handleSubmit} className="session-form-container">
