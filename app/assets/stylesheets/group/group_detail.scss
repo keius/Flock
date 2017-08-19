@@ -13,8 +13,10 @@
 .group-background {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 60%;
   margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: white;
 }
 
 .group-container {
@@ -98,10 +100,10 @@
       transform: scale(1.1);
     }
     .member-img {
-      width: 100px;
-      height: 100px;
+      width: 60px;
+      height: 60px;
       border-radius: 100%;
-      border: 5px solid $flock-darkgrey;
+      border: 3px solid $flock-darkgrey;
     }
     .member-name {
       font-size: 10px;
@@ -112,8 +114,8 @@
 .group-banner {
   display: flex;
   justify-content: center;
-  margin: 20px;
-  padding: 50px;
+  margin: 10px;
+  padding: 30px;
   font-size: 50px;
   color: white;
   background-color: $flock-peach;

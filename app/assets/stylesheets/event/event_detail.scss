@@ -9,8 +9,9 @@
 .event-background {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 60%;
   margin-top: 100px;
+  background-color: white;
 }
 
 .event-container {
@@ -77,8 +78,8 @@
 .event-banner {
   display: flex;
   justify-content: center;
-  margin: 20px;
-  padding: 50px;
+  margin: 10px;
+  padding: 30px;
   font-size: 50px;
   color: white;
   background-color: $flock-blue;
