@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
+import EventMap from './event_map';
 import * as Util from '../../util/util';
 
 class EventDetail extends React.Component {
@@ -15,6 +15,7 @@ class EventDetail extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.id);
     this.props.fetchEventUsers(this.props.match.params.id);
+    Util.geocode(this.props.events[this.props.match.params.id].location);
   }
 
   handleJoin(e) {
@@ -103,21 +104,18 @@ class EventDetail extends React.Component {
                   <p>{this.props.event.location}</p>
                 </h1>
                 <br/>
+                <div className= "event-map">
+                  <EventMap
+                    containerElement={<div style={{height: '100%'}}/>}
+                    mapElement={<div style={{height: '100%'}}/>}
+                    />
+                </div>
+                <br/>
                 <h1>Group:
                   <Link to={`/groups/${this.props.event.group.id}`}>
                     <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${this.props.event.group.image_url}`}/>
                     <p>{this.props.event.group.title}</p>
                   </Link>
-                  <GoogleMap
-                    defaultZoom={3}
-                    defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
-                  >
-                    {props.markers.map((marker, index) => (
-                      <Marker
-                        {...marker}
-                      />
-                    ))}
-                  </GoogleMap>
                 </h1>
                 <br/>
                 <h1>Host:
@@ -149,4 +147,4 @@ class EventDetail extends React.Component {
   }
 }
 
-export default withGoogleMap(EventDetail);
+export default EventDetail;
