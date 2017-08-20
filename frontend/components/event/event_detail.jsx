@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import * as Util from '../../util/util';
 
 class EventDetail extends React.Component {
@@ -107,6 +108,16 @@ class EventDetail extends React.Component {
                     <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${this.props.event.group.image_url}`}/>
                     <p>{this.props.event.group.title}</p>
                   </Link>
+                  <GoogleMap
+                    defaultZoom={3}
+                    defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
+                  >
+                    {props.markers.map((marker, index) => (
+                      <Marker
+                        {...marker}
+                      />
+                    ))}
+                  </GoogleMap>
                 </h1>
                 <br/>
                 <h1>Host:
@@ -138,4 +149,4 @@ class EventDetail extends React.Component {
   }
 }
 
-export default EventDetail;
+export default withGoogleMap(EventDetail);
