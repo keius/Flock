@@ -15,7 +15,6 @@ class EventDetail extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.id);
     this.props.fetchEventUsers(this.props.match.params.id);
-    Util.geocode(this.props.events[this.props.match.params.id].location);
   }
 
   handleJoin(e) {
@@ -81,7 +80,9 @@ class EventDetail extends React.Component {
   }
 
   render() {
+
     if (this.props.event) {
+      console.log(this.props.event.location);
       return (
         <div className="event">
           <div className="event-background">
@@ -106,12 +107,14 @@ class EventDetail extends React.Component {
                 <br/>
                 <div className= "event-map">
                   <EventMap
+                    center={Util.geocode(this.props.event.location)}
                     containerElement={<div style={{height: '100%'}}/>}
                     mapElement={<div style={{height: '100%'}}/>}
                     />
                 </div>
                 <br/>
                 <h1>Group:
+                  <p></p>
                   <Link to={`/groups/${this.props.event.group.id}`}>
                     <img className="group-img" src={`http://res.cloudinary.com/dvylj9hyw/image/upload/v1500965480/group/${this.props.event.group.image_url}`}/>
                     <p>{this.props.event.group.title}</p>
