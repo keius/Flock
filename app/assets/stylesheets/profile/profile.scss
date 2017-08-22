@@ -14,7 +14,7 @@
 }
 .profile-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 100px;
   width: 100%;
@@ -29,7 +29,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       width: 200px;
       padding: 10px;
       background-color: $flock-orange;
@@ -78,7 +78,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       width: 200px;
       padding: 10px;
       background-color: $flock-orange;
@@ -103,11 +103,13 @@
         .event-datetime {
           background-color: $flock-blue;
           color: white;
+          font-size: 20px;
         }
 
         .event-name {
           background-color: white;
           color: $flock-darkgrey;
+          font-size: 20px;
         }
       }
     }

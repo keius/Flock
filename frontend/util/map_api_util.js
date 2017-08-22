@@ -1,9 +1,11 @@
-export const fetchLocation = (location) => dispatch => (
-  APIUtil.fetchLocation(location).then((response) => {
-    const result = response.data.results[0].geometry.location;
-    dispatch(receiveLocation(result));
-    }
-  )
-);
+import axios from 'axios';
 
-export const 
+export const fetchCoordinates = (location) => (
+  axios.get('https://maps.googleapis.com/maps/api/geocode/json',
+  {
+    params:{
+      address: location,
+      key: "AIzaSyBMc9Vwf_2R_o2gkB6AdoCzDOl7DK4FlII"
+    }
+  })
+);

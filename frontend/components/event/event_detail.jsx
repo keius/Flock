@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import EventMap from './event_map';
+import MapContainer from '../map/map_container';
 import * as Util from '../../util/util';
-import axios from 'axios';
 
 class EventDetail extends React.Component {
   constructor (props) {
@@ -17,11 +16,6 @@ class EventDetail extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.id);
     this.props.fetchEventUsers(this.props.match.params.id);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const event = nextProps.event;
-    this.props.fetchLocation(event.location);
   }
 
   handleJoin(e) {
@@ -111,8 +105,8 @@ class EventDetail extends React.Component {
                 </h1>
                 <br/>
                 <div className= "event-map">
-                  <EventMap
-                    center={this.props.location}
+                  <MapContainer
+                    city={this.props.event.location}
                     containerElement={<div style={{height: '100%'}}/>}
                     mapElement={<div style={{height: '100%'}}/>}
                     />

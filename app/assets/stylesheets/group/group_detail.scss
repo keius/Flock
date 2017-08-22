@@ -28,7 +28,7 @@
   .group-details {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
     margin-left: 20px;
     margin-right: 20px;
     padding: 40px;
@@ -56,7 +56,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     padding: 40px;
     background-color: transparent;
 
@@ -70,13 +70,14 @@
 
     .event-name {
       font-size: 20px;
+      color: white
     }
   }
   .group-members {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
     margin-left: 20px;
     margin-right: 20px;
     padding: 40px;
