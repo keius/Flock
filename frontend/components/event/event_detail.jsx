@@ -2,10 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import EventMap from './event_map';
 import * as Util from '../../util/util';
+import axios from 'axios';
 
 class EventDetail extends React.Component {
   constructor (props) {
     super(props);
+
     this.handleJoin = this.handleJoin.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -15,6 +17,11 @@ class EventDetail extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.id);
     this.props.fetchEventUsers(this.props.match.params.id);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const event = nextProps.event;
+    this.props.fetchLocation(event.location);
   }
 
   handleJoin(e) {
@@ -80,9 +87,7 @@ class EventDetail extends React.Component {
   }
 
   render() {
-
     if (this.props.event) {
-      console.log(this.props.event.location);
       return (
         <div className="event">
           <div className="event-background">
@@ -107,7 +112,7 @@ class EventDetail extends React.Component {
                 <br/>
                 <div className= "event-map">
                   <EventMap
-                    center={Util.geocode(this.props.event.location)}
+                    center={this.props.location}
                     containerElement={<div style={{height: '100%'}}/>}
                     mapElement={<div style={{height: '100%'}}/>}
                     />

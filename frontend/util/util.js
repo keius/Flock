@@ -12,25 +12,3 @@ export function processDate(datetime) {
   // };
   return `${day}`;
 }
-
-export const geocode = (location) => dispatch => {
-  return axios.get('https://maps.googleapis.com/maps/api/geocode/json',
-  {
-    params:{
-      address: location,
-      key: "AIzaSyBMc9Vwf_2R_o2gkB6AdoCzDOl7DK4FlII"
-    }
-  })
-  .then((response) => {
-    console.log(response);
-    const result = response.data.results[0].geometry.location;
-    dispatch(receiveLocation(result));
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
-};
-
-export const receiveLocation = (location) => {
-  return location;
-};

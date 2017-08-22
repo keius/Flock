@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const fetchEvents = () => (
   $.ajax({
     method: 'GET',
@@ -40,5 +42,15 @@ export const deleteEvent = (id) => (
   $.ajax({
     method: 'DELETE',
     url: `api/events/${id}`
+  })
+);
+
+export const fetchLocation = (location) => (
+  axios.get('https://maps.googleapis.com/maps/api/geocode/json',
+  {
+    params:{
+      address: location,
+      key: "AIzaSyBMc9Vwf_2R_o2gkB6AdoCzDOl7DK4FlII"
+    }
   })
 );

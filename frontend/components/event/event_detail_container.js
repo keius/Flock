@@ -3,10 +3,10 @@ import {fetchEvent, deleteEvent} from '../../actions/event_actions';
 import {fetchEventUsers, joinEvent, leaveEvent} from '../../actions/user_actions';
 import EventDetail from './event_detail';
 
-const mapStateToProps = ({session, events, users}, ownProps) => ({
+const mapStateToProps = ({session, events, users, location}, ownProps) => ({
   currentUser: session.currentUser,
   event: events.events[ownProps.match.params.id],
-  users: users.users
+  users: users.users,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,7 +14,8 @@ const mapDispatchToProps = dispatch => ({
   fetchEventUsers: id => dispatch(fetchEventUsers(id)),
   deleteEvent: id => dispatch(deleteEvent(id)),
   joinEvent: eventId => dispatch(joinEvent(eventId)),
-  leaveEvent: eventId => dispatch(leaveEvent(eventId))
+  leaveEvent: eventId => dispatch(leaveEvent(eventId)),
+  fetchLocation: location => dispatch(fetchLocation(location))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventDetail);
