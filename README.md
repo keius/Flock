@@ -160,7 +160,7 @@ PostgreSQL RDBMS is a must for Heroku.
 
 The features originally implemented are basic features to bring people together. Flock would benefit from additional features that are listed in the [future implementations][future] outline.
 
-[flock]: https://flock-meetup.herokuapp.com/#/
+[flock]: https://flock.group/#/
 [meetup]: https://www.meetup.com/
 [homepage]: ./docs/images/flock_homepage.png "Flock home page"
 [auth]: ./docs/images/auth_page.png "Flock user authentication"

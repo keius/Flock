@@ -61,12 +61,18 @@ class GroupForm extends React.Component {
             </label>
             <br/>
             <label>Category:
-              <input
-                type="string"
-                value={this.state.category}
-                onChange={this.update('category')}
-                className="group-input"
-              />
+              <select className="group-input" value={this.state.value} onChange={this.update('category')}>
+                <option disabled selected value> -- select category -- </option>
+                <option value="tech">Tech</option>
+                <option value="adventure">Adventure</option>
+                <option value="music">Music</option>
+                <option value="family">Family</option>
+                <option value="art">Art</option>
+                <option value="business">Business</option>
+                <option value="sports">Sports</option>
+                <option value="beliefs">Beliefs</option>
+                <option value="food">Food</option>
+              </select>
             </label>
             <br/>
             <input className="group-form-button" type="submit" value="Submit"/>
