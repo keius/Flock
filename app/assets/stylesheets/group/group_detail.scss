@@ -57,20 +57,40 @@
     align-items: center;
     flex-direction: column;
     width: 50%;
-    padding: 40px;
-    background-color: transparent;
-
-    .event-detail {
+    padding: 20px;
+    .group-events-list {
       display: flex;
-      justify-content: center;
-      margin: 20px;
-      padding: 20px;
-      background-color: $flock-grey;
-    }
-
-    .event-name {
-      font-size: 20px;
-      color: white
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      li {
+        display: flex;
+        width: 100%;
+        .event-detail {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 20px;
+          .event-name-date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $flock-darkgrey;
+            color: white;
+            width: 20%;
+            padding: 20px;
+          }
+          .event-name-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $flock-grey;
+            color: white;
+            width: 80%;
+            padding: 10px;
+          }
+        }
+      }
     }
   }
   .group-members {

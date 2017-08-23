@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import * as Util from '../../util/util';
 import EventFormModal from '../modal/event_form_modal';
 
 class GroupDetail extends React.Component {
@@ -99,7 +100,8 @@ class GroupDetail extends React.Component {
           {Object.keys(this.props.events).map(id => (
             <li key={`event-${id}`}>
               <Link className="event-detail" to={`/events/${id}`}>
-                <h1 className="event-name">{this.props.events[id].title}</h1>
+                <div className="event-name-date">{Util.processShortDate(this.props.events[id].datetime)}</div>
+                <div className="event-name-text">{this.props.events[id].title}</div>
               </Link>
             </li>
           ))}

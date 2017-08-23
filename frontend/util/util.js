@@ -5,7 +5,7 @@ export function processDate(datetime) {
   return moment(date).format('LLL');
 }
 
-export function processDay(datetime) {
+export function processShortDate(datetime) {
   const date = new Date(datetime);
-  const day = date;
+  return moment(date).format('MMM D');
 }
