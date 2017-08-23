@@ -17,10 +17,6 @@ Allow users to comment or chat anywhere (especially in groups and events) if the
 
 Allow events to be connected through Google Calendar.
 
-## Google Maps API
-
-Allow events and groups to be connected through Google Maps, and use geocode to parse and display them.
-
 ## Other Features
 
 - Account activation via email

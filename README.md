@@ -2,7 +2,7 @@
 
 [Flock][flock] is a social site designed to bring people together. Inspired by the site [MeetUp][meetup], Flock users are able to browse, search (coming soon), create and join groups and events that express their interests.
 
-Flock is a project compiled by Gregory Park.
+Flock is a project compiled by Gregory Park, and has a Rails backend with a React/Redux frontend
 
 ![Flock home page: https://meetsapp.herokuapp.com/#/][homepage]
 
@@ -16,12 +16,6 @@ Flock is a project compiled by Gregory Park.
 
 - Ability to Join or Rsvp for a Group or Event
 ![Flock's Event Page][event]
-
-- User Pages with joined Groups
-![Flock's User Page][user]
-
-- Current User Profile showing Groups and Calendar of Events
-![Flock's Profile Page][profile]
 
 - Categories to organize Groups
 ![Flock's Category Page][category]
@@ -37,8 +31,6 @@ A [database schema][schema] was prepared alongside the design proposal.
 ## Technology
 
 Flock is a single-page application built using Rails and React.js. It was deployed using Heroku services.
-
-
 
 # Frontend
 
